@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>我们都是好孩子</li>
+    <li>我们都是好孩子</li>
+    <li>我们都是好孩子</li>
+    <li>我们都是好孩子</li>
+    <li>我们都是好孩子</li>
+</ul>
+<ol>
+
+</ol>
+<script src="../../jquery-1.11.3/jquery.js"></script>
+<script>
+    $(function () {
+    //on可以实现事件委托,第一个是事件，第二个是子选择器，第三个是方法
+    //    click是绑定在ul身上的，但是触发的对象是ul里面的小li
+        $("ul").on("click","li",function () {
+            alert(11)
+        })
+    //    on可以给未来动态创建的元素绑定事件,传统的单个事件点击方法的不能行
+        var li=$("<li>我是后来创建的</li>")
+        $("ol").append(li)
+        $("ol").on("click","li",function () {
+            alert(22)
+        })
+    })
+</script>
+</body>
+</html>

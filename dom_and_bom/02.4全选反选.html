@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+
+            text-align: center;
+            margin: 100px auto;
+            font-size: 12px;
+            border-collapse: collapse;
+        }
+        thead{
+            background-color: deepskyblue;
+            height: 40px;
+        }
+        tbody tr{
+
+            height: 30px;
+        }
+        tbody td{
+            width: 100px;
+            border: 1px solid #d4d4d4;
+            height:20px;
+
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <table>
+        <thead>
+        <tr>
+            <th><input type="checkbox" id="j_cbAll"></th>
+            <th>商品</th>
+            <th>价钱</th>
+        </tr>
+        </thead>
+        <tbody id="j_tb">
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>iPhone</td>
+            <td>8000</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>华为</td>
+            <td>8000</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>三星</td>
+            <td>8000</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>诺基亚</td>
+            <td>8000</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script>
+    var j_cbAll=document.getElementById('j_cbAll');//全选按钮
+    var j_tbs=document.getElementById('j_tb').getElementsByTagName('input');//下面所有的复选框
+        //this.checked可以得知checked=true就是选中，false就是未选中
+        j_cbAll.onclick=function () {
+            for (var i=0;i<j_tbs.length;i++){
+                j_tbs[i].checked=this.checked;
+            }
+            for (var i=0;i<j_tbs.length;i++){
+                j_tbs[i].onclick=function () {
+                    //flag:：控制全部的按钮是否被选中，先设定全部被选中
+                    var flag=true;
+
+                    //每次点击下面的复选框，都要循环看是否有没有被选中
+                    for (var i=0;i<j_tbs.length;i++){
+                        //取反，如果所有复选框有一个为false，那么全选框也为false，就是没有选
+                        if (!j_tbs[i].checked){
+                            flag=false;
+                            break//终止for循环，执行到这一步就不用再无畏地一直循环了
+                        }
+                    }
+                    j_cbAll.checked=flag;
+                }
+
+            }
+
+
+
+    }
+</script>
+</body>
+</html>

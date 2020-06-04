@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .wrapper{
+            width: 620px;
+            height: 400px;
+            margin: 100px auto;
+        }
+        #left{
+            float: left;
+            list-style: none;
+        }
+        #left li{
+            border: 1px solid red;
+            width:60px;
+            height: 30px;
+            text-align: center;
+            margin-top: 2px;
+        }
+
+        #left li:hover{
+            background-color: pink;
+        }
+        a{
+            text-decoration: none;
+        }
+        #content{
+            transform: translateY(18px);
+          border: 1px solid pink;
+            width: 400px;
+            height: 300px;
+            float: left;
+            overflow:hidden;
+        }
+        #content div{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <ul id="left">
+        <li><a href="#">肖战1</a></li>
+        <li><a href="#">肖战2</a></li>
+        <li><a href="#">肖战3</a></li>
+        <li><a href="#">肖战4</a></li>
+        <li><a href="#">肖战5</a></li>
+        <li><a href="#">肖战6</a></li>
+        <li><a href="#">肖战7</a></li>
+        <li><a href="#">肖战8</a></li>
+        <li><a href="#">肖战9</a></li>
+    </ul>
+    <div id="content">
+        <div style="display: block"><a href="#"><img src="../../images5/4.jpg" width="400px" height="300px"></a></div>
+        <div><a href="#"><img src="../../images5/2.jpg" width="400px" height="300px"></a></div>
+        <div><a href="#"><img src="../../images5/3.jpg" width="400px" height="300px"></a></div>
+        <div><a href="#"><img src="../../images5/1.jpg" width="400px" height="300px"></a></div>
+        <div><a href="#"><img src="../../images5/3.jpg" width="400px" height="300px"></a></div>
+        <div><a href="#"><img src="../../images5/7.jpg" width="400px" height="300px"></a></div>
+        <div><a href="#"><img src="../../images5/6.jpg" width="400px" height="300px"></a></div>
+        <div><a href="#"><img src="../../images5/5.jpg"width="400px" height="300px"></a></div>
+        <div><a href="#"><img src="../../images5/4.jpg" width="400px" height="300px"></a></div>
+    </div>
+</div>
+<script src="../../jquery-1.11.3/jquery.js"></script>
+<script>
+    $(function () {
+    //    1，鼠标经过左侧的小lI
+        $("#left li").mouseover(function () {
+        //    2,得到当前小li的索引号
+            var index=$(this).index();
+        //    3,让右侧盒子相应的索引号显示出来,链式操作
+            $("#content div").eq(index).show().siblings().hide()
+            // //让其余的图片（除他之外的兄弟）隐藏起来，非链式操作
+            // $("#content div").eq(index).siblings().hide()
+
+        })
+    })
+</script>
+</body>
+</html>

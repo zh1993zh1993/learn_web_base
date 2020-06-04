@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container{
+            width: 500px;
+            height: 600px;
+            background-color: palegreen;
+           margin: 400px auto;
+        }
+        .back{
+            position: fixed;
+            width: 80px;
+            height: 50px;
+            right: 30px;
+            bottom: 100px;
+            background: paleturquoise;
+          display: none;
+        }
+        .back:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="back">返回顶部</div>
+<div class="container"></div>
+<script src="../../jquery-1.11.3/jquery.js"></script>
+<script>
+    $(function () {
+        //直接赋值给跳转的位置
+        // $(document).scrollTop(300)
+        //被卷曲去的头部scrollTop()
+        //页面滚动事件
+        //盒子距离文档顶部的距离
+        var boxTop=$('.container').offset().top
+        $(window).scroll(function () {
+            if ($(document).scrollTop()>=boxTop) {
+                $(".back").fadeIn()
+            }else {
+                $(".back").fadeOut()
+            }
+        })
+        $(".back").click(function () {
+            //不带动画
+            // $(document).scrollTop(0)
+            //animate针对的是元素才能做动画，所以要封装一个页面元素，html是body的页面内容
+            //document是文档来着，不能做动画
+            $("body,html").stop().animate({
+                scrollTop:0
+            })
+        })
+    })
+</script>
+</body>
+</html>

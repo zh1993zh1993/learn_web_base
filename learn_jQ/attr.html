@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-1.11.3/jquery.js"></script>
+    <script>
+        $(function () {
+      // //      如果是只有一个属性名，那就是返回这个标签的第一个属性名
+      // console.log($('span').attr('class'));
+      // //如果有属性名加上值，那就是将标签中的属性名的值改成下面的值
+      // console.log($('span').attr('class','zh'))
+      //      删掉属性节点，空格加上另一个节点名，可删除多个属性节点
+      //       $('span').removeAttr('class name')
+      //      1，prop方法,在第一个span里添加
+            $('span').eq(0).prop('demo','hah')
+            //打印demo属性值
+            console.log($('span').prop('demo'));
+            //      2，removeProp方法
+                   $('span').removeProp('demo');
+        })
+    </script>
+</head>
+<body>
+<span class="span1" name="it666"></span>
+<span class="span2" name="lnj"></span>
+</body>
+</html>

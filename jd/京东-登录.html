@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        header{
+            position: relative;
+            width:100% ;
+            height: 80px;
+            border-bottom:2px solid gainsboro;
+
+        }
+        header img{
+            position: absolute;
+            left: 180px;
+            top: 10px;
+
+        }
+        header p.one{
+            position: absolute;
+            font-size: 25px;
+            font-family: Dialog;
+            left: 368px;
+            top: 15px;
+        }
+        header a{
+            position: absolute;
+            font-size: 16px;
+            font-family: Dialog;
+            color: grey;
+            right: 165px;
+            top: 45px;
+            text-decoration: none;
+        }
+        header a:hover{
+            color: red;
+        }
+        #bi{
+            width: 100%;
+            height: 550px;
+        }
+        table{
+            position: absolute;
+            top: 650px;
+            left: 430px;
+        }
+        tr td{
+            border-right: 1px solid black;
+            font-size: 13px;
+            padding:5px;
+        }
+        td a{
+            text-decoration: none;
+            color: grey;
+        }
+        td a:hover{
+            color: red;
+        }
+        #pp{
+            position: absolute;
+            top: 700px;
+            left: 630px;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .tab{
+            position: fixed;
+            left: 1100px;
+            top: 200px;
+            width: 620px;
+            height: 400px;
+
+
+        }
+        .tab_list{
+
+            width: 330px;
+            height: 40px;
+            background-color: white;
+        }
+        .tab_list li{
+            list-style: none;
+            float: left;
+            width:120px;
+            line-height: 39px;
+            height: 39px;
+            padding: 0 20px;
+            text-align: center;
+            cursor: pointer;
+            color: grey;
+        }
+        .tab_list li:hover{
+            color: red;
+        }
+        .tab_list .current{
+            background-color: white;
+        }
+        .tab_list ul li{
+
+        }
+        .tab_con .items{
+            float: left;
+            width: 330px;
+            height: 260px;
+            padding-top:20px;
+            background-color: white;
+        }
+        .tab_con .items img{
+            width:230px;
+            padding-left: 40px;
+        }
+        .tab_con .itemss{
+            width: 328px;
+            border: 1px solid #fff0ff;
+            height: 320px;
+            display: none;
+            background-color: white;
+        }
+        .tab_con .itemss .one {
+            width: 280px;
+            height:43px;
+            border: 1px solid gainsboro;
+            margin-top: 30px;
+            margin-left: 20px;
+        }
+        .tab_con .itemss .one input{
+            border:1px solid  white ;
+            float: right;
+            width: 230px;
+            height: 38px;
+            outline: none;
+        }
+        .tab_con .itemss .two {
+            width: 280px;
+            height:43px;
+            border: 1px solid gainsboro;
+            margin-top: 30px;
+            margin-left: 20px;
+        }
+        .tab_con .itemss .two input{
+            border:1px solid  white ;
+            float: right;
+            width: 230px;
+            height: 38px;
+            outline: none;
+        }
+        .tab_con .itemss .ch{
+            margin-top: 30px;
+            margin-left: 20px;
+        }
+        .tab_con .itemss .wj{
+            float: right;
+            margin-top:26px ;
+            color: grey;
+        }
+        div#zc {
+            width: 280px;
+            margin-top: 10px;
+            height: 40px;
+            margin-left: 20px;
+            border: 1px solid red;
+            text-align: center ;
+            background-color: red;
+        }
+        div#zc p{
+            margin-top: 10px;
+            color: white;
+        }
+        .tab_con .itemss  p#lz{
+            width: 258px;
+            text-align: center;
+            border-top: 1px solid grey;
+            margin-top: 20px;
+            margin-left: 38px;
+            padding-top: 10px;
+        }
+        .tab_con .itemss  p a{
+            text-decoration: none;
+            color: red;
+        }
+        div.itemss p.wj{
+            position: absolute;
+            left: 230px;
+            top: 191px;
+        }
+        div.itemss p.wj:hover{
+            color: red;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <img src="login/login3.png" alt="">
+    <p class="one">欢迎登陆</p>
+    <a href="调查问卷.html">登录页面，调查问卷</a>
+</header>
+<img src="login/login.png" alt="" id="bi">
+<table>
+    <tr>
+        <td><a href="#">关于我们</a></td>
+        <td><a href="#">联系我们</a></td>
+        <td><a href="#">人才招聘</a></td>
+        <td><a href="#">商家入驻</a></td>
+        <td><a href="#">广告服务</a></td>
+        <td><a href="#">手机京东</a></td>
+        <td><a href="#">友情链接</a></td>
+        <td><a href="#">联盟销售</a></td>
+        <td><a href="#">京东社区</a></td>
+        <td><a href="#">京东公益</a></td>
+        <td><a href="#">Elindbd</a></td>
+    </tr>
+</table>
+<p id="pp">
+    Copyright©2004-2017京东JD.Com版权所有
+</p>
+<div class="tab">
+    <div class="tab_list">
+        <ul>
+            <li class="current">扫码登陆</li>
+            <li class="zhd">账户登陆</li>
+        </ul>
+    </div>
+    <div class="tab_con">
+        <div class="items" ><img src="login/login2.png" alt=""></div>
+        <div class="itemss">
+            <div class="one">
+                <input type="text" id="white" placeholder="邮箱/用户名/以验证手机">
+                <label for=""> <img src="login/toubai.png" alt="" id="tH"></label>
+            </div>
+            <div class="two">
+                <input type="password" id="black" placeholder="密码">
+                <label for=""> <img src="login/suobai.png" alt="" id="sH"></label>
+            </div>
+            <input type="checkbox" class="ch">自动登陆
+            <p class="wj">忘记密码</p>
+            <div id="zc">
+                <p class="message7">登录</p>
+            </div>
+            <p id="lz"><a href="京东-注册.html">立即注册</a></p>
+        </div>
+    </div>
+</div>
+<script>
+    var oCrr=document.querySelector('.current');
+    var oIt=document.querySelector('.items');
+    var oZhd=document.getElementsByClassName('zhd')[0];
+    var iss=document.getElementsByClassName('itemss')[0];
+    var wT=document.getElementById('white');
+    var wB=document.getElementById('black');
+    var tH=document.getElementById('tH');
+    var sH=document.getElementById('sH')
+    wT.onfocus=function () {
+        this.placeholder=''
+        tH.src='login/touhei.png'
+    };
+    wT.onblur=function () {
+        this.placeholder='邮箱/用户名/以验证手机'
+        tH.src='login/toubai.png'
+    };
+    wB.onfocus=function () {
+        this.placeholder=''
+        sH.src='login/suohei.png'
+    };
+    wB.onblur=function () {
+        this.placeholder='密码'
+        sH.src='login/suobai.png'
+    };
+
+    oZhd.onmouseover=function(){
+        iss.style.display='block'
+        oIt.style.display='none'
+    }
+    oCrr.onmouseover=function () {
+        oIt.style.display='block'
+        iss.style.display='none'
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+body{
+    /*官方最小宽度*/
+    min-width: 320px;
+    /*官方最大宽度*/
+    max-width:540px;
+    margin: 0 auto;
+    font:normal 14px/1.5 Tahoma,"Lucida Grande",Verdana,"Microsoft YaHei",STXihei,hei;
+    color: #000;
+    background: #f2f2f2;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+}
+/*搜索模块*/
+.search-index{
+    /*固定定位和父亲没有关系，它以屏幕为准*/
+    position: fixed;
+    top: 0;
+    left: 50%;
+    /*兼容老版本写法*/
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    /*固定的盒子必须有宽度*/
+    width: 100%;
+    height: 44px;
+    min-width: 320px;
+    max-width:540px;
+    background-color: pink;
+    display: flex;
+}
+.search{
+    flex: 1;
+}
+.user{
+    width: 44px;
+    height: 44px;
+    background: purple;
+}

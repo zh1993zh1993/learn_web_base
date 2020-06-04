@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>解析不错，意外不</div>
+<div>解析不错，意外不</div>
+<div>解析不错，意外不</div>
+<div>解析不错，意外不</div>
+<div class="nav">hahah</div>
+<ul>
+    <li>我是ul的li</li>
+    <li>我是ul的li</li>
+    <li>我是ul的li</li>
+    <li>我是ul的li</li>
+    <li>我是ul的li</li>
+</ul>
+<ol>
+    <li>我是ol的li</li>
+    <li>我是ol的li</li>
+    <li>我是ol的li</li>
+    <li>我是ol的li</li>
+    <li>我是ol的li</li>
+</ol>
+<script src="../../jquery-1.11.3/jquery.js"></script>
+<script>
+    $(function () {
+        //选择类名
+        console.log($('.nav'));
+    //    选择ul下面所有的li
+        console.log($('ul li'));
+        //获取页面中的所有div
+        console.log($('div'));
+        //隐式迭代，把匹配的所有元素进行选号遍历，给每一个元素添加css的过程
+        $('div').css('background','pink')
+        $('ul').css('color','red')
+        //jquery的筛选选择器，获取ul下面的li的第一个
+        $('ul li:first').css('color','blue')
+        //获取ul下面的li的最后一个
+        $('ul li:last').css('color','blue')
+        //选择索引号为2的元素，索引号index从0开始
+        $('ul li:eq(3)').css('color','blue')
+        //选择索引号为奇数的元素
+        $('ul li:odd').css('color','pink')
+        //选择索引号为偶数的元素
+        $('ul li:even').css('color','red')
+
+
+
+    })
+
+</script>
+</body>
+</html>

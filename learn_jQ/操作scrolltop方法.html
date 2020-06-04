@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .scroll{
+            width: 100px;
+            height: 200px;
+            border: 1px solid #000;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+<script src="../jquery-1.11.3/jquery.js"></script>
+<script>
+    $(function () {
+        var btns=document.getElementsByTagName('button');
+            btns[0].onclick=function () {
+            //    scrollTop:获取元素滚动的偏移量
+            //     console.log($('.scroll').scrollTop());
+            //    获取网页滚动的偏移量,保证IE能兼容的写法
+                console.log($('html').scrollTop()+$('body').scrollTop());
+            }
+
+            btns[1].onclick=function () {
+                //设置元素滚动的偏移位
+                // $('.scroll').scrollTop(300);
+                //设置网页滚动的偏移位,保证IE能兼容的写法
+                $('html,body').scrollTop(300);
+            };
+    })
+</script>
+<div class="scroll">
+    我是div我是div我是div我是div我是div我是div
+    我是div我是div我是div我是div我是div我是div我是div我是div
+    我是div我是div我是div我是div我是div我是div我是div我是div
+    我是div我是div我是div我是div我是div我是div我是div我是div
+    我是div我是div我是div我是div我是div我是div我是div我是div
+    我是div我是div 我是div我是div我是div我是div我是div我是div
+    我是div我是div</div>
+<button>获取</button>
+<button>设置</button>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+</body>
+
+</html>

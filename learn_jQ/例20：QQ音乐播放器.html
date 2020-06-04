@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .header{
+            width: 100%;
+            height: 45px;
+        }
+        .header>.logo{
+            float: left;
+            margin-left: 20px;
+            opacity: 0.5;
+        }
+        .header>.logo:hover{
+            opacity:1;
+            cursor: pointer;
+        }
+        .header>.logo a{
+            display: inline-block;
+            width: 75px;
+            height: 21px;
+            /*此处应为QQ音乐的logo图片*/
+            background: url("../images5/qqm.jpg") no-repeat 0 0;
+        }
+        .header>.register{
+            float: right;
+            line-height: 45px;
+        }
+        .header>.register li{
+            list-style: none;
+            float: left;
+            margin-right: 25px;
+            color: #fff;
+            opacity: 0.5;
+        }
+        .header>.register li:hover{
+            opacity: 1;
+            cursor: pointer;
+        }
+        .content{
+            width: 100%;
+            height: 460px;
+
+        }
+        .content>.content_in{
+            width: 1200px;
+            height: 100%;
+
+            margin: 0 auto;
+        }
+        .content_in .content_left{
+            float: left;
+            width: 800px;
+            height: 100%;
+
+        }
+        .content_left .content_toolbar{
+            width: 100%;
+            height: 40px;
+
+        }
+        .content_toolbar span{
+            display: inline-block;
+            width: 122px;
+            height: 100%;
+            line-height:40px;
+            text-align: center;
+            border: 1px solid white;
+            box-sizing: border-box;
+            border-radius: 5px;
+            color: #fff;
+            opacity: 0.5;
+            margin-left: 30px;
+        }
+        .content_toolbar span:hover{
+            opacity: 1;
+            cursor: pointer;
+        }
+        .content_toolbar span i{
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            /*此处应为精灵图*/
+            background: url("../images5/xiaotu.png") no-repeat 0 0;
+            margin: 10px;
+            /*垂直排列对象*/
+            vertical-align: -5px;
+        }
+        .content_toolbar span:nth-child(1){
+            background-position: -60px -20px;
+        }
+        .content_toolbar span:nth-child(2){
+            background-position: -20px -20px;
+        }
+        .content_toolbar span:nth-child(3){
+            background-position: -40px -240px;
+        }
+        .content_toolbar span:nth-child(4){
+            background-position: -100px -20px;
+        }
+        .content_toolbar span:nth-child(5){
+            background-position: -40px -300px;
+        }
+        .content_left .content_list{
+            width: 100%;
+            height: 420px;
+
+            overflow:auto;
+        }
+        .content_list li{
+            list-style: none;
+            width: 100%;
+            height: 50px;
+
+            border-bottom: 1px solid rgba(255,255,255,0.5);
+            /*防止盒子变大，盒子大小和边框一样*/
+            box-sizing: border-box;
+            /*禁止选中文字和复制*/
+            user-select: none;
+        }
+        .content_list li div{
+            float: left;
+            color: #fff;
+            line-height: 50px;
+            opacity: 0.5;
+        }
+        .content_list .list_check{
+            width: 50px;
+            height: 100%;
+
+            text-align: center;
+        }
+        .content_list .list_check i{
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            border: 1px solid #fff;
+        }
+        .content_list .list_number{
+            width: 20px;
+            height: 100%;
+        }
+        .content_list .list_name{
+            width: 50%;
+            height: 100%;
+        }
+        .list_name .list_menu{
+            float: right;
+            margin-top: 5px;
+            margin-right: 20px;
+            display: none;
+        }
+        .list_name .list_menu a{
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            background: url("../images5/jlt.jpg") no-repeat 0 0;
+            background: pink;
+        }
+        .content_list .list_number{
+            /*字体颜色透明*/
+            /*color: transparent !important;*/
+        }
+        .list_menu a:nth-child(1){
+            background-position: -120px 0;
+        }
+        .list_menu a:nth-child(2){
+            background-position: -120px 80px;
+        }
+        .list_menu a:nth-child(3){
+            background-position: -120px 120px;
+        }
+        .list_menu a:nth-child(4){
+            background-position: -120px 40px;
+        }
+        .content_list .list_time a{
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            background: url("../images5/jlt.jpg") no-repeat -120px -100px;
+            background: pink;
+            float: left;
+            margin-top: 5px;
+            display: none;
+        }
+        .content_list .list_singer{
+            width: 20%;
+            height: 100%;
+
+        }
+        .content_in .content_right{
+            float: right;
+            width: 400px;
+            height: 100%;
+
+        }
+        .footer{
+            width: 100%;
+            height: 60px;
+
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+        .footer>.footer_in{
+            width: 1200px;
+            height: 100%;
+
+            margin: 0 auto;
+        }
+        .mask_bg{
+            position: absolute;
+            left: 0;
+            top: 0;
+            /*将图片居于最底部*/
+            z-index: -2;
+            width: 100%;
+            height: 100%;
+            background: url("../images5/6.jpg") no-repeat 0 0;
+            /*充满整个屏幕*/
+            background-size: cover;
+            /*将图片模糊，值越大越模糊*/
+            filter: blur(20px);
+        }
+        .mask{
+            position: absolute;
+            left: 0;
+            top: 0;
+            /*将图片居于最底部*/
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            /*灰色遮罩，三个0是黑色，最后是透明度*/
+            background: rgba(0,0,0,0.35);
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <h1 class="logo"><a href="#"></a></h1>
+    <ul class="register">
+        <li>登录</li>
+        <li>设置</li>
+    </ul>
+</div>
+<div class="content">
+    <div class="content_in">
+        <div class="content_left">
+            <div class="content_toolbar">
+                <span><i></i>收藏</span>
+                <span><i></i>添加到</span>
+                <span><i></i>下载</span>
+                <span><i></i>删除</span>
+                <span><i></i>清空列表</span>
+            </div>
+            <div class="content_list">
+                <ul>
+                    <li class="list_title">
+                        <div class="list_check"><i></i></div>
+                        <div class="list_number"></div>
+                        <div class="list_name">歌曲</div>
+                        <div class="list_singer">歌手</div>
+                        <div class="list_time">时长</div>
+                    </li>
+                    <li class="list_music">
+                        <div class="list_check"><i></i></div>
+                        <div class="list_number">1</div>
+                        <div class="list_name">曲尽陈情
+                        <div class="list_menu">
+                            <a href="javascript:;" title="播放"></a>
+                            <a href="javascript:;" title="添加"></a>
+                            <a href="javascript:;" title="下载"></a>
+                            <a href="javascript:;" title="分享"></a>
+                        </div>
+                        </div>
+                        <div class="list_singer">肖战</div>
+                        <div class="list_time">
+                            <span>04:36</span>
+                            <a href="javascript:;" title="删除"></a>
+                        </div>
+                    </li>
+                    <li class="list_music">
+                        <div class="list_check"><i></i></div>
+                        <div class="list_number">1</div>
+                        <div class="list_name">曲尽陈情
+                            <div class="list_menu">
+                                <a href="javascript:;" title="播放"></a>
+                                <a href="javascript:;" title="添加"></a>
+                                <a href="javascript:;" title="下载"></a>
+                                <a href="javascript:;" title="分享"></a>
+                            </div>
+                        </div>
+                        <div class="list_singer">肖战</div>
+                        <div class="list_time">
+                            <span>04:36</span>
+                            <a href="javascript:;" title="删除"></a>
+                        </div>
+                    </li>
+                    <li class="list_music">
+                        <div class="list_check"><i></i></div>
+                        <div class="list_number">1</div>
+                        <div class="list_name">曲尽陈情
+                            <div class="list_menu">
+                                <a href="javascript:;" title="播放"></a>
+                                <a href="javascript:;" title="添加"></a>
+                                <a href="javascript:;" title="下载"></a>
+                                <a href="javascript:;" title="分享"></a>
+                            </div>
+                        </div>
+                        <div class="list_singer">肖战</div>
+                        <div class="list_time">
+                            <span>04:36</span>
+                            <a href="javascript:;" title="删除"></a>
+                        </div>
+                    </li>
+                    <li class="list_music">
+                        <div class="list_check"><i></i></div>
+                        <div class="list_number">1</div>
+                        <div class="list_name">曲尽陈情
+                            <div class="list_menu">
+                                <a href="javascript:;" title="播放"></a>
+                                <a href="javascript:;" title="添加"></a>
+                                <a href="javascript:;" title="下载"></a>
+                                <a href="javascript:;" title="分享"></a>
+                            </div>
+                        </div>
+                        <div class="list_singer">肖战</div>
+                        <div class="list_time">
+                            <span>04:36</span>
+                            <a href="javascript:;" title="删除"></a>
+                        </div>
+                    </li>
+                    <li class="list_music">
+                        <div class="list_check"><i></i></div>
+                        <div class="list_number">1</div>
+                        <div class="list_name">曲尽陈情
+                            <div class="list_menu">
+                                <a href="javascript:;" title="播放"></a>
+                                <a href="javascript:;" title="添加"></a>
+                                <a href="javascript:;" title="下载"></a>
+                                <a href="javascript:;" title="分享"></a>
+                            </div>
+                        </div>
+                        <div class="list_singer">肖战</div>
+                        <div class="list_time">
+                            <span>04:36</span>
+                            <a href="javascript:;" title="删除"></a>
+                        </div>
+                    </li>
+                    <li class="list_music">
+                        <div class="list_check"><i></i></div>
+                        <div class="list_number">1</div>
+                        <div class="list_name">曲尽陈情
+                            <div class="list_menu">
+                                <a href="javascript:;" title="播放"></a>
+                                <a href="javascript:;" title="添加"></a>
+                                <a href="javascript:;" title="下载"></a>
+                                <a href="javascript:;" title="分享"></a>
+                            </div>
+                        </div>
+                        <div class="list_singer">肖战</div>
+                        <div class="list_time">
+                            <span>04:36</span>
+                            <a href="javascript:;" title="删除"></a>
+                        </div>
+                    </li>
+                    <li class="list_music">
+                        <div class="list_check"><i></i></div>
+                        <div class="list_number">1</div>
+                        <div class="list_name">曲尽陈情
+                            <div class="list_menu">
+                                <a href="javascript:;" title="播放"></a>
+                                <a href="javascript:;" title="添加"></a>
+                                <a href="javascript:;" title="下载"></a>
+                                <a href="javascript:;" title="分享"></a>
+                            </div>
+                        </div>
+                        <div class="list_singer">肖战</div>
+                        <div class="list_time">
+                            <span>04:36</span>
+                            <a href="javascript:;" title="删除"></a>
+                        </div>
+                    </li>
+                    <li class="list_music">
+                        <div class="list_check"><i></i></div>
+                        <div class="list_number">1</div>
+                        <div class="list_name">曲尽陈情
+                            <div class="list_menu">
+                                <a href="javascript:;" title="播放"></a>
+                                <a href="javascript:;" title="添加"></a>
+                                <a href="javascript:;" title="下载"></a>
+                                <a href="javascript:;" title="分享"></a>
+                            </div>
+                        </div>
+                        <div class="list_singer">肖战</div>
+                        <div class="list_time">
+                            <span>04:36</span>
+                            <a href="javascript:;" title="删除"></a>
+                        </div>
+                    </li>
+                    <li class="list_music">
+                        <div class="list_check"><i></i></div>
+                        <div class="list_number">1</div>
+                        <div class="list_name">曲尽陈情
+                            <div class="list_menu">
+                                <a href="javascript:;" title="播放"></a>
+                                <a href="javascript:;" title="添加"></a>
+                                <a href="javascript:;" title="下载"></a>
+                                <a href="javascript:;" title="分享"></a>
+                            </div>
+                        </div>
+                        <div class="list_singer">肖战</div>
+                        <div class="list_time">
+                            <span>04:36</span>
+                            <a href="javascript:;" title="删除"></a>
+                        </div>
+                    </li>
+                    <li class="list_music">
+                        <div class="list_check"><i></i></div>
+                        <div class="list_number">1</div>
+                        <div class="list_name">曲尽陈情
+                            <div class="list_menu">
+                                <a href="javascript:;" title="播放"></a>
+                                <a href="javascript:;" title="添加"></a>
+                                <a href="javascript:;" title="下载"></a>
+                                <a href="javascript:;" title="分享"></a>
+                            </div>
+                        </div>
+                        <div class="list_singer">肖战</div>
+                        <div class="list_time">
+                            <span>04:36</span>
+                            <a href="javascript:;" title="删除"></a>
+                        </div>
+                    </li>
+                    <li class="list_music">
+                        <div class="list_check"><i></i></div>
+                        <div class="list_number">1</div>
+                        <div class="list_name">曲尽陈情
+                            <div class="list_menu">
+                                <a href="javascript:;" title="播放"></a>
+                                <a href="javascript:;" title="添加"></a>
+                                <a href="javascript:;" title="下载"></a>
+                                <a href="javascript:;" title="分享"></a>
+                            </div>
+                        </div>
+                        <div class="list_singer">肖战</div>
+                        <div class="list_time">
+                            <span>04:36</span>
+                            <a href="javascript:;" title="删除"></a>
+                        </div>
+                    </li>
+                    <li class="list_music">
+                        <div class="list_check"><i></i></div>
+                        <div class="list_number">1</div>
+                        <div class="list_name">曲尽陈情
+                            <div class="list_menu">
+                                <a href="javascript:;" title="播放"></a>
+                                <a href="javascript:;" title="添加"></a>
+                                <a href="javascript:;" title="下载"></a>
+                                <a href="javascript:;" title="分享"></a>
+                            </div>
+                        </div>
+                        <div class="list_singer">肖战</div>
+                        <div class="list_time">
+                            <span>04:36</span>
+                            <a href="javascript:;" title="删除"></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="content_right"></div>
+    </div>
+</div>
+<div class="footer">
+    <div class="footer_in"></div>
+</div>
+<div class="mask_bg"></div>
+<div class="mask"></div>
+<script src="../jquery-1.11.3/jquery.js"></script>
+<script>
+    $(function () {
+    //    1监听歌曲的移入移出
+        $(".list_music").hover(function () {
+            $(this).find(".list_menu").show()
+            $(this).find(".list_time>a").show()
+            $(this).find(".list_time>span").hide()
+
+        },function () {
+            $(this).find(".list_menu").hide()
+            $(this).find(".list_time>a").hide()
+            $(this).find(".list_time>span").show()
+        })
+    //    2,监听复选框的点击事件
+
+    })
+</script>
+</body>
+</html>

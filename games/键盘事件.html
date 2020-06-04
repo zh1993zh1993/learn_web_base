@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div>.red{
+            position: absolute;
+        top: 100px;
+        }
+    </style>
+</head>
+<body>
+<div><img src="image/man.png" alt="" class="red"></div>
+<script src="jquery-1.11.3/jquery.js"></script>
+<script>
+    $(function () {
+        var x=1;
+        var y=1;
+        $(document).keydown(function (e) {
+            switch (e.keyCode) {
+                case 38://上
+                    if (x>0){
+                        x--;
+                        $(".red").css("top",(x*10)+"px")
+                    }
+                    break;
+                case 40://下
+                    if (x<52){
+                        x++
+                        $(".red").css("top",(x*10)+"px")
+                    }
+                    break;
+                case 37://左
+                    if (y>0){
+                        y--;
+                        $(".red").css("left",(y*10)+"px")
+                    }
+                    break;
+                case 39://右
+                    if (y<90) {
+                        y++;
+                        $(".red").css("left",(y*10)+"px")
+                    }
+            }
+        })
+    })
+</script>
+</body>
+</html>

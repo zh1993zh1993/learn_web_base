@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            height: 3000px;
+        }
+    </style>
+</head>
+<body>
+<script>
+    document.addEventListener('click',function (e) {
+        // client返回的是鼠标在可视区域的X和Y坐标
+        console.log(e.clientX);
+        console.log(e.clientY);
+        console.log('--------------------------')
+        //    page返回的是鼠标在页面文档的X和Y坐标
+        console.log(e.pageX);
+        console.log(e.pageY);
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+
+<script src="../jquery-1.11.3/jquery.js"></script>
+<script>
+    $(function () {
+        /*
+      DOM操作
+      1，empty  清空指定元素中的所有内容
+      2，remove   删除指定元素或者所有元素
+
+      3，html  设置所有元素的内容，获取第一个元素的内容
+      4，text  设置所有元素的文本内容，获取所有元素的文本内容
+
+      5，appendTo  将元素添加到指定元素内部的最后
+      6，append   将元素添加到指定元素内部的最后
+
+      7，prependTo  将元素添加到指定元素内部的最前面
+      8，prepend   将元素添加到指定元素内部的最前面
+
+      实现insertAfter 需要用到原生JavaScript的nextSiblings属性
+      9，insertAfter  将元素添加到指定元素外部的后面
+      10，after  将元素添加到指定元素外部的后面
+
+      11，insertBefore   将元素添加到指定元素外部的前面
+      12，before   将元素添加到指定元素外部的前面
+
+      13,元素.replaceAll.指定元素  替换所有指定元素
+      14，指定元素.replaceWith.元素  替换所有指定元素
+
+      15，clone   复制节点
+
+
+      1，attr():设置或者获取元素的属性节点值
+      2，prop():设置或者获取元素的属性值，返回true或者false
+      3，css()：设置获取样式
+      4，val():获取设置value值
+      5，hadClass():判断有没有指定类
+      6，addClass():给所有元素添加指定类或所有类
+      7，removeClass()：清空元素指定类或所有类
+      8，toggleClass():有则删除类，无则添加类，实则切换类
+
+      1,on(type,callback):注册事件
+     (1).注册多个相同类型的事件，后注册的不会覆盖先注册的
+     (2).注册多个不同类型的事件，后注册的不会覆盖先注册的
+      2，off(type,callback):移出事件
+      元素.off();不传参移出所有事件，传参移除指定事件，传递两个参数，会移除对应类型对应事件
+             */
+        // 5，hadClass():判断有没有指定类
+        console.log($("div").hasClass("cc"));
+        // 返回true
+
+    })
+</script>
+</body>
+    <div class="aabb bb cc"></div>
+</html>

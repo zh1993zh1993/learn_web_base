@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<script src="../../jquery-1.11.3/jquery.js"></script>
+<script>
+    $(function () {
+        //属性必须加引号
+        $("div").css('width','400px')
+        //使用对象的形式添加多个属性，数字可以不用加引号，复合属性必须驼峰命名
+        $("div").css({
+            width:400,
+            height:400,
+            backgroundColor:"red"
+        })
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>123</div>
+<script>
+    var div=document.querySelector('div');
+    div.onclick=function (e) {
+        console.log(e);
+        //    event就是事件对象，写到监听函数的小括号里，当形参来看
+    //    事件对象只有有了事件才会存在，系统自动创建不需要传递函数
+    };
+    div.addEventListener('click',function (e) {
+        console.log(e)
+    })
+</script>
+</body>
+</html>

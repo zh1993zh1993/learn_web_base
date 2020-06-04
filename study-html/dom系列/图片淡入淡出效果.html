@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片淡入淡出</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: red;
+            /* 给透明度 IE不兼容*/
+            opacity: 0.3;
+            /*IE兼容*/
+            filter: alpha(opacity:30);
+        }
+    </style>
+</head>
+<body>
+<div id="div1"></div>
+<script>
+    window.onload=function () {
+        var oDiv=document.getElementById('div1');
+        var timer=null;
+        var alpha=30;//透明度初始值
+        oDiv.onmouseover=function () {
+            startChange(100)
+        };
+        oDiv.onmouseout=function () {
+            startChange(0)
+        }
+        function startChange(target) {
+            clearInterval(timer);
+            timer=setInterval(function () {
+                var speed=0;
+                if (alpha<target){
+                    speed=1
+                } else {
+                    speed=-1
+                }
+                if (alpha==target){
+                    clearInterval(timer)
+                } else {
+                    alpha+=speed;//改变透明度
+                //    将改变后的透明度应用到div上
+                    oDiv.style.filter='alpha(opacity:'+alpha+')'
+                    oDiv.style.opacity=alpha/100;
+                }
+            },30)
+        }
+    }
+
+
+</script>
+</body>
+</html>

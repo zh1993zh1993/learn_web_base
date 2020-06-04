@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="width: 300px;;height: 300px;
+background-color: red;position: absolute;
+left: 0px;top: 0px"></div>
+<script>//拖拽
+    var div=document.getElementsByTagName('div')[0];
+    var disX,
+        disY;
+    var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+    //当鼠标按下去后，鼠标移上div，形成拖拽的效果
+    div.onmousedown=function (e) {
+        disX=e.clientX-parseInt(div.style.left);
+        disY=e.clientY-parseInt(div.style.top);
+
+       document.onmousemove=function (e) {
+            var event=e||window.event;
+            // console.log(e.pageX+""+e.pageY);//记录鼠标移动的位置点数；
+            // 如果要用这两个值，必须写初始值
+            div.style.left=e.clientX-disX+"px";
+            div.style.top=e.clientY-disY+"px";
+           disY=e.clientY-scrollTop+'px';
+        };
+        //当鼠标抬起时，div不再移动
+        document.onmouseup=function () {
+            document.onmousemove=null;//取消此事件
+        }
+
+    }
+   //  onmouseover=onmouseenter:当鼠标盖住这个区域时所触发的事件
+   // onmouseout=onmouseleave:当鼠标离开这个区域时所触发的事件
+   // 用button来区分鼠标的按键
+
+</script>
+</body>
+</html>

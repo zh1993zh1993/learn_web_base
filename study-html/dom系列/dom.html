@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dom</title>
+    <style>
+       .a,.b,.c,.d{
+            width: 300px;
+            height: 200px;
+        }
+        .a{
+            position: absolute;
+            z-index: 1;
+        }
+       .b{
+           position: absolute;
+           z-index: 2;
+       }
+       .c{
+           position: absolute;
+           z-index: 3;
+       }
+       .d{
+           position: absolute;
+           z-index: 4;
+       }
+    </style>
+</head>
+<script>
+    function gettimeUrl() {
+        var imgSrc=document.getElementById("one").getAttribute("src")
+        alert("圖片路徑是"+imgSrc)
+    }
+    function changeImg() {
+        var imgs=document.getElementsByTagName('img');
+        imgs[0].setAttribute('src',"../images1/nav2.jpg");
+    }
+</script>
+<body>
+    <div class="a"><img src="../../images1/nav1.jpg" id="one"></div>
+    <div class="b"><img src="../../images1/nav2.jpg" ></div>
+    <div class="c"><img src="../../images1/nav3.jpg"></div>
+    <div class="d"><img src="../../images1/nav4.jpg"><div>
+
+
+    <h2>选择你喜欢的图片</h2>
+    <input type="checkbox" name="enjoy" value="苹果">第一个
+    <input type="checkbox" name="enjoy" value="葡萄">第二个
+    <input type="checkbox" name="enjoy" value="橘子">第三个
+    <input type="checkbox" name="enjoy" value="香蕉">第四个
+    <input type="button"name="btn" value="显示图片路径">
+        <input type="button"name="btn" value="喜欢的水果">
+        <input type="button"name="btn" value="显改变图片" onclick="changeImg()">
+
+
+
+</body>
+</html>

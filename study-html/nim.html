@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>匿名函数</title>
+</head>
+<body>
+<script>
+/*匿名函数没有函数名字,通常与事件绑定在一起window.onload= function () {}*/
+   /*用变量接收匿名函数*/
+
+//    var hello= function () {
+//         for (var i=1;i<5;i++){
+//             document.write('<h>hello</h>')
+//         }
+//     }
+// hello();
+/*匿名带参函数*/
+    // function showHello(count) {
+    //     for(var i=1;i<=count;i++) {
+    //         document.write('<h>hello</h>')
+    //
+    //     }
+    //
+    // }
+    // showHello(prompt('请输入你想显示的次数'));
+
+/*计算用户输入平方*/
+// var  num=prompt('请输入数字：');
+// function compute(number) {
+//     document.write(number+'的平方是：'+number)
+//
+// }compute(num)
+window.onload=function () {
+    document.getElementById('btn').onclick=function () {
+        var number=prompt('请输入数字')
+    }
+}
+
+
+
+</script>
+</body>
+</html>

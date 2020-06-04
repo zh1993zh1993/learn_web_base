@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>1</div>
+<div>2</div>
+<div>3</div>
+<script src="../../jquery-1.11.3/jquery.js"></script>
+<script>
+    $(function () {
+        $("div").each(function (index,domEle) {
+            var sum=0
+            var arr=["red","orange","blue"]
+        //    回调函数第一个参数一定是索引号，可以自定义索引号名称
+            console.log(index);
+        //第二个参数一定是dom元素对象
+            console.log(domEle);
+            $(domEle).css('color',arr[index])
+            sum+=parseInt($(domEle).text())
+            console.log(sum);
+        })
+
+    })
+</script>
+</body>
+</html>

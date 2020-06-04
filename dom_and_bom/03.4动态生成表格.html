@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            width: 400px;
+            margin: 100px auto;
+            text-align: center;
+            border-collapse: collapse;
+        }
+        td,th{
+            border: 1px solid #333;
+        }
+        thead tr{
+            height: 40px;
+            background-color: #ccc;
+        }
+        a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<table cellspacing="0">
+    <thead>
+    <tr>
+        <th>姓名</th>
+        <th>科目</th>
+        <th>成绩</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+<!--    <tr>-->
+<!--        <td>魏璎珞</td>-->
+<!--        <td>JS</td>-->
+<!--        <td>88</td>-->
+<!--        <td><a href="javaScript:;">删除</a></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>无力</td>-->
+<!--        <td>JS</td>-->
+<!--        <td>88</td>-->
+<!--        <td><a href="javaScript:;">删除</a></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>红利</td>-->
+<!--        <td>JS</td>-->
+<!--        <td>88</td>-->
+<!--        <td><a href="javaScript:;">删除</a></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>哈萨克</td>-->
+<!--        <td>JS</td>-->
+<!--        <td>88</td>-->
+<!--        <td><a href="javaScript:;">删除</a></td>-->
+<!--    </tr>-->
+    </tbody>
+</table>
+<script>
+    var dates=[
+        {
+            name:'魏璎珞',
+            subject:'JS',
+            score:100
+        },
+        {
+            name:'傅恒',
+            subject:'JS',
+            score:100
+        },
+        {
+            name:'宏利',
+            subject:'JS',
+            score:100
+        },
+        {
+            name:'明玉',
+            subject:'JS',
+            score:100
+        }
+    ]
+//    往tbody里面创建行。有多少人（通过数组的长度）创建多少行
+    var tbody=document.querySelector('tbody');
+    for (var i=0;i<dates.length;i++){
+    //    创建tr行
+        var tr=document.createElement('tr');
+        tbody.appendChild(tr)
+    //    行里面创建单元格,其数量取决于对象内的属性数量，for循环遍历对象
+        for (var k in dates[i]){
+        //    创建单元格
+        var td=document.createElement('td')
+            tr.appendChild(td)
+            td.innerHTML=dates[i][k];
+        }
+    //    创建有两个删除字的单元格
+        var td=document.createElement('td')
+        tr.appendChild(td)
+       td.innerHTML="<a href='javaScript:;'>删除</a>"
+    }
+    var as=document.querySelectorAll('a')
+    for (var i=0;i<as.length;i++){
+        as[i].onclick=function () {
+            tbody.removeChild(this.parentNode.parentNode)
+        }
+    }
+
+</script>
+</body>
+</html>

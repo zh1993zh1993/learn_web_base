@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .father{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+<script src="../jquery-1.11.3/jquery.js"></script>
+<script>
+    $(function () {
+    // $('.son').click(function (event) {
+    //     alert('son');
+    //     // 第一种方法return false//阻止事件冒泡
+    // //    第二种方法,拉着方法都要写到儿子里面
+    //     event.stopPropagation()
+    // })
+    //     $('.father').click(function () {
+    //         alert('father')
+    //     })
+        $('a').click(function (event) {
+            alert('弹出注册')
+            //第一种方法: return false//阻止默认跳转到百度
+        //第二种方法
+            event.preventDefault()
+        })
+    })
+</script>
+<div class="father">
+    <div class="son"></div>
+</div>
+<a href="http://www.baidu.com">注册</a>
+<form action="http://www.taobao.com">
+    <input type="text">
+    <input type="submit">
+</form>
+</body>
+</html>

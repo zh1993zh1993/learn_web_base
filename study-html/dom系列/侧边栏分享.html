@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>侧边栏分享</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        #div1{
+            width: 150px;
+            height: 300px;
+            background: palegreen;
+            position: absolute;
+            top: 50px;
+            left: -150px;
+        }
+        #div1 span{
+           position: absolute;
+            width: 20px;
+            height: 60px;
+            line-height: 20px;
+            background: pink;
+            top: 105px;
+            right: -20px;
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="div1"><span>分享到</span></div>
+<script>
+window.onload=function () {
+
+    var oDiv1=document.getElementById('div1')
+    oDiv1.onmouseover=startMoveRight;
+    oDiv1.onmouseout=startMoveLeft;
+    var timer=null;//设置一个空的时间
+    function startMoveRight() {
+        clearInterval(timer)//清除上一个点击按钮产生的定时器
+        timer=setInterval(function () {
+            if (oDiv1.offsetLeft==0){//如果累加10px到左间距为0
+                clearInterval(timer);//那么清除这个的时间，就停在页面上
+            } else {//否则运行下面，三十毫秒内，左间距，匀速加10px
+                oDiv1.style.left=oDiv1.offsetLeft+10+'px';
+            }
+        },30)
+    }
+    function startMoveLeft() {
+        clearInterval(timer)
+        timer=setInterval(function () {
+         if (oDiv1.offsetLeft==-150){
+             clearInterval(timer)
+         }else {
+             oDiv1.style.left=oDiv1.offsetLeft-10+'px';
+         }
+        },30)
+    }
+
+
+}
+</script>
+</body>
+</html>

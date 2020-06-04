@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+       .wrapper{
+            width: 1450px;
+            height: 680px;
+            float: left;
+           background-color: paleturquoise;
+        }
+       ul li{
+           list-style: none;
+           float: left;
+           margin-left: 20px;
+           margin-top: 20px;
+       }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <ul>
+        <li><a href=""><img src="../../images5/6.jpg" alt=""></a></li>
+        <li><a href=""><img src="../../images5/6.jpg" alt=""></a></li>
+        <li><a href=""><img src="../../images5/6.jpg" alt=""></a></li>
+        <li><a href=""><img src="../../images5/6.jpg" alt=""></a></li>
+        <li><a href=""><img src="../../images5/6.jpg" alt=""></a></li>
+        <li><a href=""><img src="../../images5/6.jpg" alt=""></a></li>
+    </ul>
+</div>
+<script src="../../jquery-1.11.3/jquery.js"></script>
+<script>
+    $(function () {
+
+        $(".wrapper ul li").hover(function () {
+            //   鼠标 进入的时候，其他的li标签透明度：0.5
+            $(this).siblings().stop().fadeTo(100,0.5)
+        },function () {
+            //    鼠标离开，其他li透明度改为1
+            $(this).siblings().stop().fadeTo(100,1)
+        })
+
+    })
+</script>
+</body>
+</html>

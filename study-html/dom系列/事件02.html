@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="border: 5px solid black;width: 500px;height: 500px;"></div>
+<script>
+    //绑定事件，如果在循环里，考虑是否形成闭包，可用立即执行函数
+   //  var div=document.getElementsByTagName('div')[0];
+   // div.attachEvents('onclick',function () {
+   //     handle.call('div');
+   //
+   // });
+   //  function handle() {
+   //
+   //  }
+    var div=document.getElementsByTagName('div')[0];
+    div.addEventListener('click',test,false);
+    function test() {
+       this.style.backgroundColor='red'
+    }
+    div.removeEventListener('click',test,false)
+</script>
+</body>
+</html>

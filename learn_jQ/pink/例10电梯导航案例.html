@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="../../jquery-1.11.3/jquery.js"></script>
+<script>
+    $(function () {
+    //    当我们点击了小li 此时不需要再执行页面滚动事件里面的li的背景选择 添加current类
+    //    节流阀 互斥锁
+        var flag=true;
+    //    1,显示隐藏电梯导航
+    var toolTop=$(".recommend").offset().top;
+    //为了页面一加载就显示，所以封装一个函数，多出调用
+    toggleTool();
+    function toggleTool(){
+        if ($(document).scrollTop()>=toolTop){
+            $(".fixedtool").fadeIn()
+        } else {
+            $(".fixedtool").fadeOut()
+        }
+    }
+    //$(window).scroll()页面滚动
+    $(window).scroll(function () {
+        toggleTool();
+        // 3，当我们页面滚动到内容区域模块，左侧电梯导航，相对应的小li模块，也会添加current类，兄弟移除current类
+       if (flag){
+           $(".floor .w").each(function (i,ele) {
+               //判断：被卷曲的头部大于等于内容区域里面每个模块的offset（）.top
+               if ($(document).scrollTop()>=$(ele).offset().top){
+                   //    利用索引号找到相应的电梯导航小li添加类
+                   $(".fixedtool li").eq(i).addClass("current").siblings().removeClass()
+               }
+           })
+       }
+    })
+    //    2，点击电梯导航页面可以滚动到相应内容区域
+        $(".fixedtool li").click(function () {
+            flag=false
+            //每次点击小li就需要算出页面要去前往的位置
+            //选出对应索引号的内容区的盒子 计算他的.offset().top
+            var current=$(".floor .w").eq($(this).index()).offset().top
+        //    页面动画滚动效果
+            $("body,html").stop().animate({
+                scrollTop:current
+            },function () {
+                flag=true
+            })
+        //    点击之后让当前的小li添加current 类名，姐妹移除current类名，红色背景
+            $(this).addClass("current").siblings().removeClass()
+        })
+
+
+    })
+</script>
+</body>
+</html>

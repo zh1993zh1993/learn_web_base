@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        .current{
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<script src="../../jquery-1.11.3/jquery.js"></script>
+<script>
+    $(function () {
+    //    单个事件注册
+    //     $("div").click(function () {
+        //         $(this).css("backgroundColor","red")
+        //     })
+        //     $("div").mouseenter(function () {
+        //         $(this).css("backgroundColor","blue")
+        //     })
+    //    事件处理on（）绑定事件
+    //     $("div").on({
+    //         mouseenter:function () {
+    //             $(this).css("backgroundColor","blue")
+    //         },
+    //         click:function () {
+    //             $(this).css("backgroundColor","red")
+    //         },
+    //         mouseleave:function () {
+    //             $(this).css("backgroundColor","purple")
+    //         }
+    //     })
+        $("div").on("mouseenter mouseleave",function () {
+          $(this).toggleClass("current")
+        })
+    })
+</script>
+</body>
+</html>

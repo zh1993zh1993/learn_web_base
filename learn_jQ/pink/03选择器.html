@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="grandfather">
+<div class="father">
+    <div class="son">儿子</div>
+</div>
+</div>
+<div class="nav">
+    <p>我是屁</p>
+    <div>
+        <p>我是p</p>
+    </div>
+</div>
+<script src="../../jquery-1.11.3/jquery.js"></script>
+<script>
+    $(function () {
+    //    父parent(),返回的是最近一级的父级元素，
+        console.log($('.son').parent())
+        //    父亲的父亲是爷爷
+        console.log($('.son').parent().parent());
+    //    子
+    //    1，只选亲儿子children()，相当于子代选择器ul>li
+        $('.nav').children('p').css('color','red')
+    //    2,可以选择里面所有的孩子，包括儿子和孙子find(),类似后代选择器ul li
+        $('.nav').find('p').css('color','pink')
+
+    })
+</script>
+</body>
+</html>

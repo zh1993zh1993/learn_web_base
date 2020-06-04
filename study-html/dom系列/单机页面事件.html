@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 100px;
+            height: 100px;
+            background-color: palegreen;
+            margin: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<button id="btn">显示</button>
+<div id="div1"></div>
+<script>
+    // window.onload=function () {
+    //     document.onclick=function () {
+    //         alert('hello')
+    //     }
+    // }
+//    鼠标坐标,事件对象使用ev表示
+//     window.onload=function () {
+//         //处理浏览器兼容问题
+//         document.onclick=function (ev) {
+//             var oEvent=ev||event
+//             alert(event.clientX+"，"+event.clientY)
+//         }
+//     }
+    window.onload=function () {
+        var bTn=document.getElementById('btn');
+        var oDiv=document.getElementById('div1');
+        bTn.onclick=function (ev) {
+            var  oEvent=ev||event; //处理事件兼容性
+            oDiv.style.display='block'
+           oEvent.cancelBubble=true
+        }
+document.onclick=function () {
+    oDiv.style.display='none'
+}
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            position: absolute;
+            width: 400px;
+            height: 100%;
+            left: 50%;
+            text-align: center;
+            transform: translateX(-50%);
+        }
+        .Xz {
+            margin-left: 75px;
+            width: 250px;
+        }
+        button{
+            width: 150px;
+            height: 50px;
+            background-color: paleturquoise;
+        }
+        img{
+            width: 250px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <h2>安利一下肖战</h2>
+    <button>删除图片</button>
+    <button>添加图片</button>
+    <button>复制图片</button>
+    <button>替换图片</button>
+    <div class="Xz"> </div>
+</div>
+</body>
+<script>
+
+    var arr =
+        [   "../images5/1.jpg",
+            "../images5/2.jpg",
+            "../images5/3.jpg",
+            "../images5/4.jpg",
+            "../images5/5.jpg",
+            "../images/6.jpg",
+            "../images/7.jpg"];
+    var imgBox = document.querySelector('div.Xz');
+    var deleteBtn = document.getElementsByTagName('button')[0];
+    var addBtn = document.getElementsByTagName('button')[1];
+    var copyBtn = document.getElementsByTagName('button')[2];
+    var replaceBtn = document.getElementsByTagName('button')[3];
+    var num=0;
+    //添加操作 使用方法appendChild
+    addBtn.onclick = function () {
+        if(num==arr.length){   //当变量等于图片数量时重置变量
+            num=0;
+        }
+        var newImg = document.createElement('img'); //点击一次点击一个img元素
+        imgBox.appendChild(newImg);//每次创建的img元素添加到盒子里
+        newImg.src=arr[num];//路径根据变量的变化而变化
+        num++;//变量更新
+    }
+    //删除操作 使用方法removeChild
+    deleteBtn.onclick = function () {
+        if(imgBox.hasChildNodes()) { //判断是否有子节点
+            var img = imgBox.lastElementChild; //存放的最后一个子元素
+            imgBox.removeChild(img); //删除最后一个子元素
+            num--;
+        }
+        else {
+            alert('没有图片，无法删除！！！');
+        }
+        if(num==-1){ //当小于0时 让变量重置
+            num=0;
+        }
+    }
+    //复制图片  使用方法cloneNode
+    copyBtn.onclick =function () {
+        if(imgBox.hasChildNodes()) {//判断是否有子节点
+            var copyImg = imgBox.lastElementChild.cloneNode();//复制存放在最后的子元素
+            imgBox.appendChild(copyImg);//添加 这个复制的子元素
+        }
+        else {
+            alert('没有图片，无法复制!!!');
+        }
+    }
+    //替换
+    var max = 0 //这个变量作为每次替换的图片下标
+    replaceBtn.onclick = function () {
+        max++;
+        if(max==7){ //当到最后一张图片重置变量
+            max=0;
+        }
+        if(imgBox.hasChildNodes()) {//判断是否有子节点
+            var replaceImg = imgBox.lastElementChild;
+            replaceImg.src = arr[max]; //将最后一张图片随机替换
+        }else {
+            alert('没有图片，无法替换!!!');
+        }
+    }
+</script>
+</html>

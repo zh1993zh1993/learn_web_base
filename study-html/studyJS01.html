@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 100px;
+            background: yellow;
+            border: 2px solid black;
+            color: olivedrab;
+            font-size: 10px;
+            padding: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<input type="checkbox"id="ch">七天内自动登录
+<div id="div1">为了您的信息安全,请不要在其他设备上使用此功能</div>
+<script>
+    var div1=document.getElementById('div1');
+    var input=document.getElementById('ch');
+    //写事件方法
+    function toOver(){
+        div1.style.display='block';
+    }
+    function toOut(){
+        div1.style.display='none';
+    }
+    input.onmouseover=toOver;
+    input.onmouseout=toOut;
+</script>
+</body>
+</html>

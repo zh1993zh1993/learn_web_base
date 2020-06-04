@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .center>.comment{
+            width: 570px;
+            height: 73px;
+            /*禁止拖拽*/
+            resize: none;
+            /*去掉蓝色的边框显示*/
+            outline: none;
+        }
+        .center{
+            margin-left: 500px;
+            margin-top:100px;
+        }
+        .center>.send{
+            width: 82px;
+            height: 30px;
+            margin-top: 4px;
+            margin-left: 506px;
+            /*去掉边框*/
+            border: none;
+            background: #fd8040;
+            outline: none;
+            color: white;
+        }
+        .center>.send:hover{
+            cursor: pointer;
+        }
+        .center>.messageList{
+            width: 600px;
+            background: white;
+             float: left
+        }
+        .messageList>.info{
+            padding: 10px 20px;
+            border-bottom: 2px solid #ccc;
+        }
+        .info>.infoText{
+            line-height: 25px;
+            margin-bottom: 10px;
+        }
+        .info>.infoOperation{
+            width: 100%;
+            overflow: hidden;
+        }
+        .infoOperation>.infoTime{
+            float: left;
+            font-size: 13px;
+            color: #ccc;
+        }
+        .infoOperation>.infoHandle{
+            float: right;
+            font-size: 13px;
+        }
+        .infoHandle>a{
+            text-decoration: none;
+            color: #ccc;
+            /*此处应设置精灵图*/
+            background: url("../images2/tu.jpg") no-repeat 0 0;
+            padding-left: 25px;
+            margin-left: 10px;
+        }
+        .infoHandle>a:nth-child(2){
+            /*调整背景图片的位置*/
+            background-position: 0 -17px;
+        }
+        .infoHandle>a:nth-child(3){
+            /*调整背景图片的位置*/
+            background-position: 0 -33px;
+        }
+        .page{
+            width: 1000px;
+            height: 40px;
+            background-color: #9f5024;
+            position: absolute;
+            top: 800px;
+            left: 300px;
+        }
+        .page>a{
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: hotpink;
+            text-align: center;
+            text-decoration: none;
+            float: right;
+            margin-right: 10px;
+            margin-top: 5px;
+            padding-top: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="center"><textarea class="comment"></textarea>
+    <!--disabled:禁用input属性，只有输入内容时才可用-->
+    <input type="button" value="发布" class="send" disabled>
+    <div class="messageList">
+        <!--<div class="info">-->
+        <!--<p class="infoText">这里是微博发布的内容这里是微博发布的内容这里是微博发布的内容-->
+            <!--这里是微博发布的内容这里是微博发布的内容这里是微博发布的内容这里是微博发布的内容-->
+            <!--这里是微博发布的内容这里是微博发布的内容。。。</p>-->
+        <!--<p class="infoOperation">-->
+            <!--<span class="infoTime">2019-12-4 15:25:33</span>-->
+            <!--&lt;!&ndash;顶踩删三个按钮&ndash;&gt;-->
+            <!--<span class="infoHandle">-->
+                    <!--<a href="javascript:;">0</a>-->
+                    <!--<a href="javascript:;">0</a>-->
+                    <!--<a href="javascript:;">删除</a>-->
+                <!--</span>-->
+        <!--</p>-->
+    <!--</div>-->
+    </div>
+</div>
+<div class="page">
+    <a href="javascript:;">1</a>
+    <a href="javascript:;">2</a>
+    <a href="javascript:;">3</a>
+</div>
+<script src="../jquery-1.11.3/jquery.js"></script>
+<script>
+    $(function () {
+    //   0 监听内容的时时输入 ，利用事件委托，因为change只能监听失去焦点时，不能时时监听
+    //   0.1 propertychange:只要当前属性发生改变就能触发事件
+        $("body").delegate(".comment","propertychange input",function () {
+        //    判断是否输入了内容
+            if ($(this).val().length>0){
+            //    让按钮可用,判断属性的true和false用prop
+                $(".send").prop("disabled",false)
+            }else {
+                //    让按钮不可用
+                $(".send").prop("disabled",true)
+            }
+        })
+    //   1 监听发布按钮的点击
+        $(".send").click(function () {
+        //拿到用户输入的内容
+            var $text=$(".comment").val();
+        //    根据内容创建节点
+            var $weibo=createEle($text)
+        //    插入微博
+            $(".messageList").prepend($weibo)
+        })
+    //    2,监听顶踩删的点击
+        $("body").delegate(".infoTop","click",function () {
+            $(this).text(parseInt($(this).text())+1)
+        })
+        $("body").delegate(".infoDown","click",function () {
+            $(this).text(parseInt($(this).text())+1)
+        })
+        $("body").delegate(".infoDel","click",function () {
+            $(this).parents(".info").remove()
+        })
+    //    创建节点方法
+        function createEle(text) {
+            var $weibo=$("<div class=\"info\">\n" +
+                "        <p class=\"infoText\">"+text+"</p>\n" +
+                "        <p class=\"infoOperation\">\n" +
+                "            <span class=\"infoTime\">"+formartDate()+"</span>\n" +
+                "            <!--顶踩删三个按钮-->\n" +
+                "            <span class=\"infoHandle\">\n" +
+                "                    <a href=\"javascript:;\" class='infoTop'>0</a>\n" +
+                "                    <a href=\"javascript:;\" class='infoDown'>0</a>\n" +
+                "                    <a href=\"javascript:;\" class='infoDel'>删除</a>\n" +
+                "                </span>\n" +
+                "        </p>\n" +
+                "    </div>")
+            return $weibo;
+        }
+    //    生成时间的方法
+        function formartDate() {
+            var date=new Date();
+            var arr=[date.getFullYear()+"-",date.getMonth()+1+"-",date.getDate()+" ",
+            date.getHours()+":",date.getMinutes()+":",date.getSeconds()]
+          //  将时间转化成字符串
+          return arr.join("")
+        }
+    })
+</script>
+</body>
+</html>

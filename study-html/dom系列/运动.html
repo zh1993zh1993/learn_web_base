@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            width: 300px;
+            height: 300px;
+            margin: 100px;
+            background: red;
+            overflow: hidden;
+            position: relative;
+        }
+        #div2{
+            width: 200px;
+            height: 200px;
+            margin: 100px;
+            background: blue;
+            overflow: hidden;
+        }
+        #div3{
+            width: 100px;
+            height: 100px;
+            margin: 100px;
+            background: yellow;
+
+        }
+    </style>
+</head>
+<body>
+<!--
+offsetParent:返回已经定位的父结点,如果父节点没有定位则找向上一级，直到找到定位的父节点
+offsetLeft:相对已经定位的父元素的左偏移量
+offsetTop:相对已经定位的父元素的右偏移量
+-->
+<div id="div1"><div id="div2"><div id="div3"></div></div></div>
+
+
+
+
+<script>
+    window.onload=function () {
+        var oDiv1=document.getElementById('div1')
+        var oDiv2=document.getElementById('div2')
+        var oDiv3=document.getElementById('div3')
+        console.log(oDiv1.offsetLeft+","+oDiv1.offsetTop);
+        console.log(oDiv2.offsetLeft+","+oDiv1.offsetTop);
+        console.log(oDiv3.offsetLeft+","+oDiv1.offsetTop);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .bg{
+            position: relative;
+            width: 500px;
+            height: 550px;
+            box-shadow: 10px 10px 4px rgba(100,0,0,0.5);
+            border: 10px solid #00868B;
+            margin: 100px auto;
+            background:#79CDCD;
+        }
+        .bg>h1{
+            position: absolute;
+            left: 150px;
+        }
+        .bg .dl{
+            position: absolute;
+            width: 100%;
+            height: 200px;
+            top: 150px;
+        }
+        .dl .xh{
+            position: absolute;
+            display: block;
+            float:left;
+            left: 40px;
+            top: -15px;
+            font-size: 30px;
+        }
+        .dl>input{
+            position: absolute;
+            width: 289px;
+            height: 46px;
+            left: 150px;
+            border: 2px solid #37A9F4;
+            font-size: 20px;
+            padding: 0 0 0 10px;
+        }
+        .dl>.message{
+            position: absolute;
+            left: 150px;
+            top: 40px;
+            color: red;
+            font-size: 10px;
+            display: none;
+        }
+        .bg .pw{
+            position: absolute;
+            width: 100%;
+            height: 200px;
+            top: 250px;
+        }
+        .pw .mm{
+            position: absolute;
+            display: block;
+            float:left;
+            left: 40px;
+            top: -15px;
+            font-size: 30px;
+        }
+        .pw>input{
+            position: absolute;
+            width: 289px;
+            height: 46px;
+            left: 150px;
+            border: 2px solid #37A9F4;
+            font-size: 20px;
+            padding: 0 0 0 10px;
+        }
+        .pw>.message{
+            position: absolute;
+            left: 150px;
+            top: 40px;
+            color: red;
+            font-size: 10px;
+            display: none;
+        }
+        .bg #lz{
+            position: absolute;
+            display: inline-block;
+            width: 376px;
+            height: 50px;
+            left:60px;
+            top: 340px;
+        }
+        #lz>input{
+            position: absolute;
+            text-decoration: none;
+            width: 100%;
+            height: 100%;
+            color: black;
+            font-size: 15px;
+            padding: 5px;
+            background:deepskyblue;
+            border-radius: 10px;
+            outline: none;
+        }
+        .bg #zc{
+            position: absolute;
+            display: inline-block;
+            background: red;
+            width: 376px;
+            height: 50px;
+            left:60px;
+            top:440px;
+            border-radius: 10px;
+        }
+        #zc>a{
+            position: absolute;
+            text-decoration: none;
+            width: 100%;
+            height: 100%;
+            color: black;
+            font-size: 15px;
+            left: 169px;
+           margin-top: 13px;
+        }
+    </style>
+</head>
+<script src="jquery-1.11.3/jquery.js"></script>
+<script>
+    $(function () {
+        $(".dl>input").focus(function () {
+            $(".dl>.message").show();
+        })
+        $(".pw>input").focus(function () {
+            $(".pw>.message").show();
+        })
+        $(".dl>input").blur(function () {
+            if ($(this).val() === "") {
+                $(".dl>.message").show().html("账号不能为空").css("color", "red");
+            } else {
+                $(".dl>.message").show().html("输入正确").css("color", "black");
+            }
+        })
+        $(".pw>input").blur(function () {
+            if ($(this).val() === "") {
+                $(".pw>.message").show().html("密码不能为空").css("color", "red");
+            } else {
+                $(".pw>.message").show().html("输入正确").css("color", "black");
+            }
+        })
+    })
+</script>
+<body>
+<p style="color: red;text-align: center;font-size: 30px">进入管理员页面请输入账号:123456&nbsp;&nbsp;姓名:root</p>
+<div class="bg">
+    <h1>学生登录系统</h1>
+<form action="http://localhost:8080/StudentManager_SSM/loginStudent" method="post">
+    <div class="dl">
+        <h1 class="xh">学号:</h1>
+        <input type="text" placeholder="学号" name="studentid" >
+        <p class="message">请输入账号</p>
+    </div>
+    <div class="pw">
+        <h1 class="mm">密码:</h1>
+        <input type="password" placeholder="姓名" name="name">
+        <p class="message">请输入姓名</p>
+    </div>
+    <p id="lz"><input type="submit" value="登录" /></p>
+</form>
+<p id="zc"><a href="http://localhost:8080/StudentManager_SSM/zc">注册</a></p>
+</div>
+<script>
+    var b=${msg};
+    if (!b){
+        alert("账号或姓名错误！")
+    }
+</script>
+</body>
+</html>

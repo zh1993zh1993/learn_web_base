@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*div.big{*/
+        /*    width: 1200px;*/
+        /*    height: 1200px;*/
+        /*    background: green;*/
+        /*}*/
+        /*div.big>div.one{*/
+        /*    width: 100px;*/
+        /*    height: 100px;*/
+        /*    background: black;*/
+        /*}*/
+        /*div.big>div.one>img{*/
+        /*    width: 50px;*/
+        /*    height: 50px;*/
+        /*}*/
+        /*div.two{*/
+        /*    position: fixed;*/
+        /*    width: 100px;*/
+        /*    height: 100px;*/
+        /*    background: white;*/
+        /*    top:0px;*/
+        /*    display: none;*/
+        /*}*/
+        /*div.two>img{*/
+        /*    width: 50px;*/
+        /*    height: 50px;*/
+        /*}*/
+        /*.coin{*/
+        /*    position: fixed;*/
+        /*    width: 15px;*/
+        /*    height: 15px;*/
+        /*    top: 501px;*/
+        /*    left:855px ;*/
+        /*}*/
+        .mask{
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        .mask>.login{
+            position: absolute;
+            left: 600px;
+            top: 100px;
+            width: 270px;
+            height: 400px;
+            background: url("image/bg.jpg");
+        }
+        .login>img{
+            position: absolute;
+            width: 150px;
+            height: 50px;
+            top: 260px;
+            left: 60px;
+
+        }
+        .login>.this{
+            position: absolute;
+            left: 90px;
+            top: 170px;
+        }
+        .login>.stop{
+            position: absolute;
+            top: 80px;
+            left: 90px;
+        }
+
+    </style>
+    
+</head>
+<div class="mask">
+    <div class="login">
+        <h3 class="stop">游戏结束!</h3>
+        <h3 class="this">当前得分：</h3>
+        <img src="image/backbtn.png" alt=""></div>
+</div>
+<body>
+<!--<div class="big">-->
+<!--    <div class="one"><img src="../夺宝小游戏/image/backbtn.png" alt="" class="btn"></div>-->
+<!--</div>-->
+<!--&lt;!&ndash;<div class="two"><img src="../夺宝小游戏/image/backbtn.png" alt="" class="btns"></div>&ndash;&gt;-->
+<!--<img src="image/coin.png" alt="" class="coin">-->
+<!--<div class="one"><span class="heh">5</span></div>-->
+<!--<script src="jquery-1.11.3/jquery.js"></script>-->
+<!--<div class="box">-->
+<!--    <h2>剩余时间：<span class="clock">10</span></h2>-->
+<!--</div>-->
+<!--<script>-->
+<!--    var t=10-->
+<!--    var time=document.getElementsByClassName('clock')[0]-->
+<!--    function fun() {-->
+<!--        t&#45;&#45;;-->
+<!--        time.innerHTML=t;-->
+<!--        if (t<=0){-->
+<!--            clearInterval(inter)-->
+<!--        }-->
+<!--    }-->
+<!--    var inter=setInterval("fun()",1000)-->
+<!--</script>-->
+<!--<script>-->
+<!--    $(function () {-->
+
+
+<!--})-->
+
+
+
+    //     $(".btn").click(function () {
+    //        $(".two").fadeIn(1000);
+    //        $(".one").hide()
+    //         moneyGame();
+    //     })
+    //     $(".btns").click(function () {
+    //         $(".two").hide()
+    //         $(".one").show()
+    //     })
+    //     function moneyGame() {
+    //         // 定义图片
+    //         var money1=['image/coin.png','image/coin.png','image/coin.png',
+    //             'image/coin.png','image/coin.png','image/coin.png','image/coin.png',
+    //             'image/coin.png','image/coin.png','image/coin.png','image/coin.png',
+    //             'image/coin.png','image/coin.png','image/coin.png','image/coin.png',
+    //             'image/coin.png','image/coin.png','image/coin.png']
+    //         var money2=['image/coin.png','image/coin.png','image/coin.png',
+    //             'image/coin.png','image/coin.png','image/coin.png','image/coin.png',
+    //             'image/coin.png','image/coin.png','image/coin.png','image/coin.png',
+    //             'image/coin.png','image/coin.png','image/coin.png','image/coin.png',
+    //             'image/coin.png','image/coin.png','image/coin.png']
+    //         //定义图片可能出现的位置0-8
+    //         var arrPos=[
+    //             {left:"880px",top:"311px"},
+    //             {left:"605",top:"301px"},
+    //             {left:"680px",top:"501px"},
+    //             {left:"855px",top:"351px"},
+    //             {left:"810px",top:"450px"},
+    //             {left:"800px",top:"311px"},
+    //             {left:"700px",top:"400px"},
+    //             {left:"780px",top:"450px"},
+    //             {left:"760px",top:"380px"}
+    //         ]
+    //     //    创建一个图片
+    //         var $coinImg=$("<img src=''>")
+    //     //    随机获取图片位置
+    //         var posIndex=Math.round(Math.random()*8)
+    //     //    设置图片的位置
+    //         $coinImg.css({
+    //             position:"absolute",
+    //             left:arrPos[posIndex].left,
+    //             top:arrPos[posIndex].top
+    //         })
+    //     //    随机获取数组类型
+    //         var coinType=Math.round(Math.random())==0?money1:money2;
+    //     //    设置图片的内容
+    //         var coinIndex=0
+    //         var coinTimer=setInterval(function () {
+    //             if (coinIndex>9){
+    //                 $coinImg.remove()
+    //                 clearInterval(coinTimer)
+    //                 moneyGame();
+    //             }
+    //             $coinImg.attr('src',coinType[coinIndex])
+    //             coinIndex++;
+    //         },60)
+    //
+    //
+    //     //    添加到界面上
+    //         $(".big").append($coinImg)
+    //     }
+        })
+
+</script>
+<!--<script>-->
+<!--    var t=13;-->
+<!--    var timeO=document.querySelector(".timeC")[0]-->
+<!--    function fun(){-->
+<!--        t&#45;&#45;;-->
+<!--        timeO.innerHTML=t;-->
+<!--        if (t<=0){-->
+<!--            clearInterval(inter);-->
+<!--        }-->
+<!--        var inter=setInterval(function () {-->
+<!--            fun();-->
+<!--        },1000)-->
+<!--    }-->
+<!--</script>-->
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 400px;
+            margin: 0 auto;
+        }
+        #para input{
+            width: 50px;
+            height: 35px;
+            line-height: 10px;
+            font-size: 24px;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h2>简易计算器</h2>
+    <p>第一个数：<input type="text" id="textNum1"></p>
+    <p>第一个数：<input type="text" id="textNum2"></p>
+    <p id="para"><input type="button" id="addBtn" value="+">
+        <input type="button" id="subBtn" value="-">
+        <input type="button" id="mulBtn" value="*">
+        <input type="button" id="divBtn" value="/"></p>
+    <p>计算结果：<input type="text"id="textResult"></p>
+</div>
+<script>
+    var num1,num2,result;
+    function compute(obj) {
+        num1=parseFloat(document.getElementById('textNum1').value);
+        num2=parseFloat(document.getElementById('textNum2').value);
+        switch (obj) {
+            case '+':result=num1+num2;break;
+            case '-':result=num1-num2;break;
+            case '*':result=num1*num2;break;
+            case '/':
+                if (num2!=0) {result=num1/num2;}
+                else {
+                    result='除数不能为0'
+                }break;
+            // 如果以上条件没有成立：则执行break
+                default:
+                break
+        }
+        document.getElementById('textResult').value=result;
+    }
+    document.getElementById('addBtn').onclick=function () {
+        compute('+');
+    };
+    document.getElementById('subBtn').onclick=function () {
+        compute('-');
+    };
+    document.getElementById('mulBtn').onclick=function () {
+        compute('*');
+    };
+    document.getElementById('divBtn').onclick=function () {
+        compute('/');
+    };
+</script>
+</body>
+</html>

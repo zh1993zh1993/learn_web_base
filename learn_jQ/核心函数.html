@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            border:1px solid black;
+            background: green;
+            width: 100px;
+            height: 100px;
+        }
+
+    </style>
+</head>
+<body>
+<div>div1</div>
+<div>div2</div>
+<div>div3</div>
+<script src="../jquery-1.11.3/jquery.js"></script>
+<script>
+  //jQuery的核心函数
+  //   $();他就是一个核心函数
+    /*
+    * 1,函数作为他的参数 */
+//     $(function () {
+//         alert('hello')
+//     })
+// //    字符串作为参数
+// //    字符串选择器作为参数
+//     var $div1=$('.box');
+//   console.log($div1);
+//   var $div2=$('#div1')
+//   console.log($div2);
+// //  接收代码片段字符串-----创建对应的dom元素
+//     var $para=$('<p>我是锻炼</p>');
+//     //将创建的dom元素添加到第一个div中
+//     $div1.append($para)//在第一个div里面出现了p的内容
+// //接收dom元素作为参数
+//   var sp=document.getElementsByTagName('span')[0]
+//    var $span=$(sp)
+//   console.log($span);
+//什么是jQuery对象,就是类似于数组，称为伪数组
+//  伪数组：有o~length-1的长度
+$(function () {
+    var $div=$('div');
+    console.log($div);
+})
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            padding: 10px;
+            border: 15px solid red;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<script src="../../jquery-1.11.3/jquery.js"></script>
+<script>
+    $(function () {
+    //    1,width()/height（）获取元素width和height大小
+        console.log($('div').width());
+        //修改宽度
+        $('div').width(300)
+    //    innerWidth()/innerHeight（）获取元素width+height+padding大小
+        console.log($('div').innerWidth());
+    //    outerWidth()/outerHeight（）获取元素width+height+padding+border大小
+        console.log($('div').outerWidth())
+        //    outerWidth(true)/outerHeight（true）获取元素width+height+padding+border+margin大小
+        console.log($('div').outerWidth(true))
+    })
+</script>
+</body>
+</html>

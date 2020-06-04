@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button>按钮1</button>
+<button>按钮2</button>
+<button>按钮3</button>
+<button>按钮4</button>
+<button>按钮5</button>
+<button>按钮3</button>
+<button>按钮4</button>
+<button>按钮5</button>
+<script src="../../jquery-1.11.3/jquery.js"></script>
+<script>
+    $(function () {
+        //隐式迭代。给所有的按钮都绑定了点击事件
+        $("button").click(function () {
+            //当前元素变化颜色背景,this不加引号
+            $(this).css('backgroundColor','red')
+        //    其余兄弟去掉背景颜色,this不加引号
+            $(this).siblings("button").css('backgroundColor','')
+        })
+    })
+</script>
+</body>
+</html>

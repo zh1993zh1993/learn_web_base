@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="../jquery-1.11.3/jquery.js"></script>
+<script>
+    $(function () {
+     //   1,逐个设置
+     // $('div').css('width','100px');
+     //    $('div').css('height','100px');
+     //    $('div').css('background','red')
+    //    2.链式设置:注意，链式操作如果大于三步，建议分开
+    //     $('div').css('width','100px').css('height','100px').css('background','pink')
+    //    3.批量设置,企业开发推荐！
+        $('div').css({
+            width:'100px',
+            height:'100px',
+            background:'blue'
+        });
+    //4.获取css样式值
+        console.log($('div').css('width'));
+    })
+</script>
+<div></div>
+</body>
+</html>

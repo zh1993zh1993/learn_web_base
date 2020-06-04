@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>//无序列表
+    <li>春</li>
+    <li>夏</li>
+    <li>秋</li>
+    <li>冬</li>
+</ul>
+<ul type="circle">//无序列表
+    <li>春</li>
+    <li>夏</li>
+    <li>秋</li>
+    <li>冬</li>
+</ul>
+<ol>//有序列表
+    <li>春</li>
+    <li>夏</li>
+    <li>秋</li>
+    <li>冬</li>
+</ol>
+<dl>//自定义列表
+    <dt>计算机概念：</dt>//名词1
+    <dd>概念1</dd>//名词解释
+    <dd>概念2</dd>
+    <dd>概念3</dd>
+</dl>
+<ul>
+    <li>咖啡</li>
+    <ol>
+        <li>拿铁</li>
+        <li>摩卡</li>
+    </ol>
+</ul>
+<ul>
+    <li>茶</li>
+    <ul>
+        <li>碧螺春</li>
+        <li>龙井</li>
+    </ul>
+</ul>
+<header>
+    <h2>秋天的味道</h2>
+    你说你喜欢风，但是我觉得凉
+</header>
+<article>//表示与山下文中不相关的内容，作为一篇独立的文章
+    <header>//内容区块整个页面的标题
+        <h2>文章主要标题</h2>
+    </header>
+    <section>文章主要内容</section>
+    <aside>其他相关更多日志</aside>
+</article>
+<aside>右侧菜单</aside>
+<article>
+    <header>
+        <h2>小张的个人介绍</h2>
+        <p>小张是一个好学生，是一个帅哥……</p>
+    </header>
+    <section><h2>评论</h2></section>
+    <article>
+        <h2>评论者：A</h2>
+        <p>小张真的很帅</p>
+    </article>
+    <article>
+        <h2>评论者：B</h2>
+        <p>小张真的很帅</p>
+    </article>
+</article>
+<p>被称作“第四代体育馆”的“鸟巢”国家体育场是
+    2008年北京奥运会的标志性建筑，她位于北京北四环边，
+    包含在奥林匹克国家森林公园之中。占地面积20.4万平米，总建筑面积25.8万平米，
+    拥有9.1万个固定座位，内设餐厅、运动员休息室、更衣室等。2008年奥运会期间，
+    承担开幕式、闭幕式、田径比赛、男子足球决赛等赛事活动。</p>
+<figure>//figure元素的内容应该与主内容相关，但如果被删除，也不会对文档流产生影响
+   <figcaption>北京鸟巢</figcaption>//用于为figure元素组添加标题
+    <p>拍摄者：传智播客内容与资源组，拍摄时间：2015 年 12 月</p>
+    <img src="../images1/niaochao.jpg">
+</figure>
+<hgroup>
+    <figcaption>《致橡树》</figcaption>
+    <p>《致橡树》是舒婷创作于1977年3月的爱情诗。是朦胧诗派的代表作之一，作为新时期文学的发轫之作，《致橡树》在文学史上的地位是不言自明的。 作者通过木棉树对橡树的“告白”，来否定世俗的，不平等的爱情观，呼唤自由，平等独立，风雨同舟的爱情观，喊出了爱情中男女平等，心心相印的口号，发出新时代女性的独立宣言，表达对爱情的憧憬与向往。</p>
+    <figcaption>《再别康桥》</figcaption>
+    <p>《再别康桥》是现代诗人徐志摩脍炙人口的诗篇，是新月派诗歌的代表作品。全诗以离别康桥时感情起伏为线索，抒发了对康桥依依惜别的深情。语言轻盈柔和，形式精巧圆熟，诗人用虚实相间的手法，描绘了一幅幅流动的画面，构成了一处处美妙的意境，细致入微地将诗人对康桥的爱恋，对往昔生活的憧憬，对眼前的无可奈何的离愁，表现得真挚、浓郁、隽永，是徐志摩诗作中的绝唱。</p>
+    <figcaption>《无怨的青春》</figcaption>
+    <p>《无怨的青春》是台湾著名女诗人席慕蓉的诗，澄明热烈，真挚动人，充满了田园式的牧歌情调和舒缓的音乐风格。她多写爱情、人生、乡愁，写得美极，淡雅剔透，抒情灵动，饱含着对生命的挚爱真情，充满着对人情、爱情、乡情的领悟。</p>
+</hgroup>
+<header>
+    <hgroup>//用于多个标题组成标题组，与h1~h6元素组合使用
+        <h1>我的个人网站</h1>
+        <h2>我的个人作品</h2>
+    </hgroup>
+    <p>开心快乐每一天</p>
+</header>
+
+<details>
+    <summary>显示或者隐藏列表</summary>
+    <ul>
+        <li>列表1</li>
+        <li>列表2</li>
+        <li>列表3</li>
+        <li>列表4</li>
+    </ul>
+</details>
+<h2>我的工作进展</h2>
+<progress max="100"value="20"></progress>//max：需要完成的值，即总量;value：进度当前值，可以为整数和浮点数。
+<h2>小学生成绩表</h2>//meter元素用于表示指定范围内的数值
+<p>
+    小红：<meter value="65" min="0" max="100" low="60" high="80" title="65分" optimum="100">65</meter><br/>
+    小张：<meter value="70" min="0" max="100" low="60" high="70" title="70分" optimum="100">70</meter>
+</p>
+<p>我们早上<time>10:20</time>上课</p>
+<p>今年<time datetime="2019——11——11">双十一</time></p>
+<time datetime="2019——11——11" pubdate="true"></time>
+本消息发布于2015年8月15日
+//datetime：用于定义相应的时间或日期。取值为具体时间（例如：14:00）或具体日期（例如2015—09—01），不定义该属性时，由元素的内容给定日期 / 时间。
+//pubdate：用于定义time元素中的日期/时间是文档（或article元素）的发布日期。取值一般为“pubdate”。
+<p>你是一只<mark>大猪猪</mark>，长得<mark>可爱还油腻</mark>></p>//高亮显示某些字符
+<p>也许愈是美丽就愈是脆弱,就像盛夏的泡沫。</p>
+<cite>——明晓溪《泡沫之夏》</cite>//以斜体的样式展示
+<p draggable="true">这些文字可以被拖动</p>
+<img src="../images1/td.jpg" draggable="true">//draggable属性用来定义元素是否可以拖动
+
+<p>spellcheck属性值为true<br/>
+    <textarea spellcheck="true">html5</textarea>
+</p>
+<p>spellcheck属性值为false<br/>
+    <textarea spellcheck="false">html5</textarea>
+</p>//spellcheck属性主要针对于input元素和textarea文本输入框
+//对用户输入的文本内容进行拼写和语法检查
+//spellcheck属性有两个值：true（默认值）和false
+//值为true时检测输入框中的值，反之不检测。
+<h2>可编辑列表</h2>
+<ul contenteditable="true" type="circle">
+    <li>可编辑1</li>
+    <li>可编辑2</li>
+    <li>可编辑3</li>
+</ul>
+</body>
+</html>

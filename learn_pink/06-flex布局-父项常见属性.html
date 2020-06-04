@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            /*给父级添加flex属性*/
+            display: flex;
+            width: 600px;
+            height: 300px;
+            background-color: pink;
+            /*把设置主轴方向和换行（列）合并*/
+            flex-flow: column wrap;
+            /*换行*/
+            /*flex-wrap: wrap;*/
+            /*因为有了换行，此时侧轴上控制子元素的对齐方式我们用align-content*/
+            /*align-content: stretch;*/
+            /*justify-content: center;*/
+        /*    默认的主轴是x轴 行 row 那么y轴就是侧轴了，我们的元素是根据主轴来排列
+         flex-direction: row;*/
+            /*简单理解翻转：flex-direction:row-reverse;*/
+        /*    我们可以把我们的主轴设置成Y轴，那么x轴就是侧轴了*/
+        /*    flex-direction: column;*/
+        /*        justify-content: space-between;*/
+        /*    flex布局中子元素是不会换行，如果装不开会缩小子元素的宽度放到父元素里*/
+        /*    flex-wrap: wrap;*/
+        /*    我们需要一个侧轴居中 常用*/
+        /*    align-items: center;*/
+        /*    拉伸，子盒子不给高度*/
+        /*    align-items: stretch;*/
+        }
+        div span{
+            width: 150px;
+            height: 100px;
+            background-color: purple;
+            /*margin: 10px;*/
+        }
+    </style>
+</head>
+<body>
+<!--
+常见父项属性：
+.flex-direction:设置主轴方向
+在flex布局中是分为主轴（水平向右x轴）和侧轴（水平向下Y轴）两个方向，同样的叫法有：行和列,x轴和y轴
+属性值：
+1.row：默认值从左到右/2.row-reverse：从右到左/3.column:从上到下/4.column-reverse:从下到上
+注意：主轴和侧轴是会变化的，就看flex-direction设置谁为主轴，剩下的就是侧轴，而我们的子元素是跟着主轴来排列的
+——————————————————————————————————————————————————————————————————————————————————————
+.justify-content:设置主轴上的子元素排列方式
+属性值：
+1.flex-start：默认值从头部开始 如果主轴是x轴，则从左到右
+2.flex-end：从尾部开始排列
+3.center：在主轴居中对齐（如果主轴是x轴，则水平居中）
+4.space-around：平分剩余空间
+5.space-between：先两边贴边 再平分剩余空间（重要）
+———————————————————————————————————————————————————————————————————————————————————————
+.flex-wrap:设置子元素是否换行
+属性：1.默认nowrap，不换行/2.wrap：换行
+———————————————————————————————————————————————————————————————————————————————————————
+.align-content:侧轴上的子元素的排列方式（多行）注：设置子项出现换行的情况，在单行下是没有效果的
+属性值：
+1.flex-start：默认值在侧轴的头部开始排列
+2.flex-end：在侧轴的尾部开始排列
+3.center：在侧轴中间显示
+4.space-around：子项在侧轴平分剩余空间
+5.space-between：子项在侧轴先分布在两头，再平分剩余空间
+6.stretch：设置子元素高度平分父元素高度
+————————————————————————————————————————————————————————————————————————————————————————
+.align-items:侧轴上的子元素的排列方式(单行)
+属性：
+1.flex-start：默认值从上到下/2.flex-end：从下到上
+3.center：挤在一起居中，垂直居中/4.stretch：拉伸
+——————————————————————————————————————————————————————————————————————————————————————————
+.flex-flow:复合属性，相当于同时设置了flex-direction和flex-wrap
+flex-flow: column wrap/row wrap;
+-->
+<div>
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+    <span>4</span>
+    <span>5</span>
+    <span>6</span>
+</div>
+</body>
+</html>

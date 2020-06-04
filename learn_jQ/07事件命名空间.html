@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .father{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+<script src="../jquery-1.11.3/jquery.js"></script>
+<script>
+    $(function () {
+        //想要事件的命名空间有效，1，事件是通过on来绑定的2，通过trigger来触发事件
+        $('.son').on('click.zs',function () {
+            alert('click1')
+        })
+        $('.son').on('click.ls',function () {
+            alert('click2')
+        })
+       $('.son').trigger('click.zs')
+    })
+</script>
+<div class="father">
+    <div class="son"></div>
+</div>
+<a href="http://www.baidu.com">注册</a>
+<form action="http://www.taobao.com">
+    <input type="text">
+    <input type="submit">
+</form>
+</body>
+</html>

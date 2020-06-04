@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//函数累加器
+//     function add() {
+//         var count=0;
+//         function demo() {
+//             count++;
+//             console.log(count)
+//         }
+//         return demo;
+//     }
+//     var counter=add();
+//     counter();
+//     function test() {
+//         var num=100;
+//         function a() {
+//             num++;
+//             console.log(num);
+//         }
+//         function b() {
+//             num--;
+//             console.log(num);
+//         }
+//         return[a,b];
+//     }
+//     var myArr=test();
+//     myArr[0]();
+//     myArr[1]();
+//缓存的应用:
+//     function eater() {
+//         var food="";
+//         var obj={
+//             eat:function () {
+//                 console.log("i'm eating"+food);
+//                 food="";
+//
+//             },
+//             push:function (myFood) {
+//                 food=myFood;
+//
+//             }
+//         }
+//         return obj;
+//
+//     }
+//     var eater1=eater();
+//     eater1.push('banana');
+//     eater1.eat();
+//    立即执行函数：
+var num=(function (a,b,c) {
+var d=a+b+c*2
+    return d;
+    }(1,2,3))
+</script>
+</body>
+</html>

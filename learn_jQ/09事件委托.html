@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="../jquery-1.11.3/jquery.js"></script>
+<script>
+    $(function () {
+        $("button").click(function () {
+            $("ul").append("<li>我是新增的li</li>" )
+        })
+        //"ul>li":相当于遍历ul下面所有的li，
+        // 触发所有的加载完毕的li的点击事件，除了新增的
+        // $("ul>li").click(function () {
+        //     alert('heheh')
+        // })
+        //把li的事件委托给ul,可以遍历到新增的li并且给其点击事件
+        $('ul').delegate('li','click',function () {
+            console.log($(this).html());
+        })
+    })
+</script>
+<ul>
+    <li>我是第1个li</li>
+    <li>我是第2个li</li>
+    <li>我是第3个li</li>
+</ul>
+<button>新增一个li</button>
+</body>
+</html>

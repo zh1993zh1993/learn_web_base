@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<button>按钮1</button>
+<button>按钮2</button>
+<button>按钮3</button>
+<button>按钮4</button>
+<button>按钮5</button>
+
+<script>
+    window.onload=function () {
+        var btns=document.getElementsByTagName('button');
+        //btns得到是一个伪数组，里面的每一个元素是btns[i]
+        for (var i=0;i<btns.length;i++){
+               btns[i].onclick=function () {
+                   //1，先把所有按钮颜色去掉
+                   for (var i = 0; i < btns.length;i++){
+                       btns[i].style.backgroundColor=''
+                   }
+                   //2，才让当前颜色为pink
+                   this.style.backgroundColor='pink'
+               }
+        }
+    }
+</script>
+</body>
+</html>

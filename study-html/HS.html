@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数</title>
+</head>
+<body>
+<script>
+/*isNaN(value)原来判断value是否为数字
+parseInt(value)*/
+//重点自定义函数
+/*函数定义格式function函数名称（参数列表）（代码块）函数定义方法*/
+ //    function showHello() {
+ // for (var i=1;i<5;i++){
+ //     document.write('<h>hello</h>')
+ // }
+ //    }window.onclick=showHello
+
+    // 第一种调用showHello();
+//    第二种调用事件=函数名；onload页面加载时----window.onload=showHelloS;
+//。onclick单击时调用方法 -----window.onclick=showHello
+//     var demo=123;
+//     var num=demo.toString(8);
+//     document.write(typeof (num)+":"+num);
+//     var num=10101010;
+//     var  test =parseInt(num,2)
+//     document.write(typeof (test)+":"+test.toString(16))
+//     function test() {
+//         var a=123;
+//         var b=243;
+//         var c=a+b;
+//         document.write(c);
+//     }window.onload=test
+//     function test() {
+//         document.write('hello')
+//     }test();驼峰原则，第一个单词小写，后面单词首字母大写
+//     function theFirstName() {
+//
+//     }document.write(theFirstName)
+//     var test=function () {
+//         document.write('a');
+//     };
+//     window.onload=test;
+// //    命名函数表达式
+//     var test=function abc() {
+//         document.write('a')
+//
+//     }
+//     function sum(a,b) {
+//     //    var a; var b ab为形式参数
+//         var c=a+b;
+//         document.write(c);
+//     }sum(1,2);//实际参数
+//
+//     function sum(a,b) {
+//         if (a>10){
+//             document.write(a-b);
+//         } else if(a<10){
+//             document.write(a+b);
+//         }else {
+//             document.write(10);
+//         }
+//
+//     }
+//     sum(11,2);console.log(arguments[i])在控制台打印输出
+//     function sum(a) {
+//     // arguments----[11,2,3]实参列表
+//         for (var i=0;i<arguments.length;i++){
+//             console.log(arguments[i])
+//         }
+//
+//     }
+// function sum(a,b,c,d) {
+//     if (sum.length>arguments.length){
+//         console.log('形参多了')
+//     } else if(sum.length<arguments.length){
+//         console.log('实参多了')
+//     }else {
+//         document.write('相等')
+//     }
+// }
+// sum(11,2,3)
+//     function sum() {
+//         var result=0
+//         for (var i=0;i<arguments.length;i++){
+//             result+=arguments[i]
+//         }
+//         document.write(result)
+//     }sum(1,2,3,4,5,6,7,8,9,10);
+//    return:终止函数，返回值
+//     function myNumber(target) {
+//
+//         return+target
+//     }var num=myNumber('123');
+//     console.log(typeof (num)+" "+num)
+//选定小动物的叫声
+
+      // function scream(animal) {
+      //      switch (animal) {
+      //        case "dog":
+      //            document.write('wang');
+      //         case 'cat':
+      //             document.write('miao');
+      //         case 'fish':
+      //             document.write('o~o~');
+      //             return
+      //
+      //     }
+      //     var animal=window.prompt("请输入")
+      // }
+      // scream()
+
+//
+//      }
+//      function sum() {
+//         var result=0;
+//          for (var i=0;i<arguments.length;i++){
+//              result+=arguments[i]
+//          }
+//         console.log(result)
+//      }
+//    sum()
+//定义一组函数，逆转并输出汉字形式
+//     function  reverse() {
+//         var num=window.prompt('input');
+//         var str="";
+//         for (var i=num.length-1;i>=0;i--){
+//             str+=transfer(num[i]);
+//         }
+// document.write(str)
+//     }
+//     function transfer(target) {
+//         if (target=="1"){
+//             switch (target) {
+//                 case "1":
+//                     return"一";
+//                 case "2":
+//                     return "二";
+//                 case "3":
+//                     return "三";
+//
+//             }
+//         }
+//     }
+//     reverse()
+//     function test() {
+//         var num = 123;
+//         var i=231;
+//         document.write(num+i)
+//     }
+//     test()
+//       var n=parseInt(window.prompt('input'));
+//     function mul() {
+//     //n的阶乘   n!=n*(n-1)!;
+//     //     var num=1;
+//     //     for (var i=1;i<=n;i++){
+//     //         num*=1;
+//     //     }
+//
+//     }递归：找规律，找出口
+//     function mul() {
+//         if (n==1){
+//             return 1;
+//         }
+//         return n*mul(n-1)
+//
+//     }
+// mul(5)
+//     function mul(n) {
+//         if (n==1||n==0){
+//             return 1;
+//         }
+// return n*mul(n-1);
+//     }
+//     function fb() {
+//         if (n==1||n==2){
+//             return 1;
+//         }
+//         return fb(n-1)+fb(n-2);
+//     }
+
+
+
+</script>
+</body>
+</html>

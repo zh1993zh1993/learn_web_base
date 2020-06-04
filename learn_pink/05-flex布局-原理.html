@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            display: flex;
+            width: 80%;
+            height: 300px;
+            background-color: pink;
+            justify-content: space-around;
+        }
+        div span{
+            /*width: 150px;*/
+            /*flex: 1；平均分成等分*/
+            flex: 1;
+            height: 100px;
+            background-color: purple;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+<!--
+flex弹性布局：
+.操作方便，布局极为简单，移动端应用很广泛
+.PC端浏览器支持情况较差
+.IE 11 或者更低版本，不支持或仅部分支持
+建议：
+1.如果是PC端页面布局，我们还是传统布局
+2.如果是移动端或者不考虑兼容性问题的PC端页面布局，我们还是使用flex弹性布局
+-->
+<!--
+布局原理：
+flex是flexible Box的缩写，“弹性布局，任何一个容器都可以指定为flex布局
+注意：
+.当我们为父盒子设为flex布局以后，子元素的float，clear和vertical-align属性将失效
+.伸缩布局=弹性布局=伸缩盒布局=弹性盒布局=flex布局
+-->
+<div>
+<!--    div就是flex父容器
+span就是子容器flex项目
+子容器可以横向排列也可以纵向排列
+-->
+    总结flex布局原理：就是通过给父盒子添加flex属性，来控制盒子的位置和排列方式
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+</div>
+</body>
+</html>

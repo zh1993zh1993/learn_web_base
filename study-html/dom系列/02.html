@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>题目</title>
+</head>
+<body>
+
+<div>
+    <strong>
+        <span>
+        <i></i>
+    </span>
+    </strong>
+</div>
+<script>
+    //封装函数，返回元素e的第n层祖先元素节点
+//     function returnParent(elem,n) {
+    //         while (elem&&n){
+    //             elem=elem.parentElement;
+    //             n--;
+    //         }
+    //         return elem;
+    //     }
+    // var i=document.getElementsByTagName('i')[0];
+    function retSibling(e,n) {
+        while (e&&n){
+            if (n>0){
+                e=e.nextElementSibling;
+                n--;
+
+            } else {
+                e=e.previousElementSibling;
+                n++;
+            }
+        }
+      return e;
+    }
+    
+</script>
+</body>
+</html>

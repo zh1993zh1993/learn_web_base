@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+我是一段不愿意被选中的文字
+<script>
+    document.addEventListener('contextmenu',function (e) {
+        //阻止默认事件，禁止了选中右键菜单contextmenu
+        e.preventDefault()
+    })
+    document.addEventListener('selectstart',function (e) {
+        //阻止默认事件，禁止了选中文字selectstart
+        e.preventDefault()
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: brown;
+            position: relative;
+            left: 0;
+            top: 50px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<input type="button"value="开始运动" id="btn">
+<div id="div1"></div>
+<script>
+    window.onload=function () {
+        var oBtn=document.getElementById('btn');
+        var oDiv1=document.getElementById('div1')
+        var timer=null;
+        //定义函数
+        oBtn.onmouseover=startMove;
+       function startMove() {
+          clearInterval(timer)//清除上一个点击按钮产生的定时器
+           timer=setInterval(function () {
+               var speed=1;
+               if (oDiv1.offsetLeft>=500){
+                   clearInterval(timer)
+               }else {
+                oDiv1.style.left=oDiv1.offsetLeft+speed+'px';
+               }
+            },30)//每隔30毫秒执行函数
+           oDiv1.style.display='block'
+        }
+    }
+</script>
+</body>
+</html>

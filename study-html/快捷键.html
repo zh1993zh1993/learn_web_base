@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<!--aaa获取id为aaa的div标签-->
+<div id="aaa"></div>
+<!--span.bbb获取class为bbb的span标签-->
+<span class="bb"></span>
+<!--ul#aa.bb获取id为aa的，class为bb的ul标签-->
+<ul id="aa" class="bb"></ul>
+<!--div.aa>ul>li生成一个无序列表，而且被 class 为 aaa 的 div 包裹-->
+<div class="aa">
+    <ul>
+        <li></li>
+    </ul>
+</div>
+<!--div+ul生成平级的元素，就需要使用 + 号-->
+<div></div>
+<ul></ul>
+<li></li>
+<!--div>ul>li^span 获取跟 ul 平级的 span 标签，用 “^” 提升一下层次-->
+<div>
+    <ul>
+        <li></li>
+    </ul>
+    <span></span></div>
+<!--div>ul>li^^span与 div 生成一个平级元素，再上升一个层次，多用一个“^”-->
+<div>
+    <ul>
+        <li></li>
+    </ul>
+</div>
+<span></span>
+<!--ul>li*5 生成很多个 li 标签。直接在 li 后面 * 上一些数字-->
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<!--div>(header>ul>li*2>a)>header>p 层次关系和并列关系-->
+<div>
+    <header>
+        <ul>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+        </ul>
+    </header>
+    <footer>
+        <p></p>
+    </footer>
+</div>
+<!--(div>dl>(dt+dd)*3)+footer>p “*” 符号生成重复结构-->
+<div>
+    <dl>
+        <dt></dt>
+        <dd></dd>
+        <dt></dt>
+        <dd></dd>
+        <dt></dt>
+        <dd></dd>
+    </dl>
+</div>
+<footer>
+    <p></p>
+</footer>
+<!--a[href="http://blog.wpjam.com" title="刷鱼"] 附带href属性和title属性的a标签-->
+<a href="http://blog.wpjam.com" title="我爱水煮鱼"></a>
+<!--ul>li.item$*5 依次排序-->
+<ul>
+    <li class="item1"></li>
+    <li class="item2"></li>
+    <li class="item3"></li>
+    <li class="item4"></li>
+    <li class="item5"></li>
+</ul>
+<!--ul>li{$}*10-->
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+    <li>10</li>
+</ul>
+
+</body>
+</html>

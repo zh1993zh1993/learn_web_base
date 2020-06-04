@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<link href="../css/work3.css"type="text/css"rel="stylesheet">-->
+    <style>
+        p:nth-child(1){
+            color:green;
+            font-size:24px;
+        }
+        :nth-last-child(4){
+            color:yellow;
+            font-weight:bolder;
+            font-size:36px;
+        }
+        p:after{
+            content: "你是哪个笑傲帮嘎嘣";
+            font-size: 20px;
+        }
+        div{
+            width: 80px;
+            height: 50px;
+            border-style: solid dashed dotted double;
+            padding: 10px;
+            margin: 80px;
+        }
+    </style>
+</head>
+<body>
+<!--E[att^=value]属性选择器
+p[id^=one]{
+    color: blue;
+    font-size: 40px;
+}
+p[id^=two]{
+    color: red;
+    font-size: 20px;
+}
+-->
+<!--
+<p id="one">天空还是一片浅蓝，很浅，转眼间，天空出现一道彩霞。</p>
+<p id="two">天空还是一片浅蓝，很浅，转眼间，天空出现一道彩霞。</p>
+<p id="one1">天空还是一片浅蓝，很浅，转眼间，天空出现一道彩霞。</p>
+<p id="two2">天空还是一片浅蓝，很浅，转眼间，天空出现一道彩霞。</p>
+E[att$=value]属性选择器,p标签中以main字符串结尾的id属性
+<p id="newmain">吹面不寒杨柳风</p>
+<p id="oldmain">吹面不寒杨柳风</p>
+E[att*=value]属性选择器-->
+<!--<p id="newdemo">吹面不寒杨柳风</p>
+子代选择器:h1>strong{
+        		color:red;
+        		font-size: 20px;
+        		font-family: "微软雅黑";
+        	}主要用来选择某个元素的第一级子元素
+<h1>这个<strong>知识点</strong>很<strong>重要</strong></h1>
+<h1>四川长江职业学院<strong>鼎利学院</strong>欢迎您！</h1>-->
+<!--关系选择器之兄弟选择器(+~)
+p+h2{临近兄弟选择器
+				color:green;
+				font-family: "微软雅黑";
+				font-size: 20px;
+			}**/
+			p~h2{/**普通兄弟选择器**/
+				color:pink;
+				font-family: arial;
+				font-size:20px;
+			}
+<h2>《赠汪伦》</h2>
+<p>李白乘舟将欲行，</p>
+<h2>忽闻岸上踏歌声。</h2>
+<h2>忽闻岸上踏歌声。</h2>
+<h2>忽闻岸上踏歌声。</h2>
+:root选择器
+用于匹配文档根元素，对所有页面元素生效，
+对于不需要此样式的元素，可单独设置样式进行覆盖
+<h2>面朝大海春暖花开</h2>
+<p>从明天起关心粮食和蔬菜</p>-->
+<!--
+如果对某个结构元素使用样式，但想排除这个结构元素下面的子结构元素
+        	让其不用这个样式，可以使用:not选择器
+body*:not(h3){
+color: red;
+font-size:20px;
+font-family: "微软雅黑";
+}
+<h3>世界上最遥远的距离</h3>
+<p>世界上最遥远的距离</p>
+<p>不是生与死的距离</p>
+<p>而是我站在你面前</p>
+<p>你却不知道我爱你......</p>-->
+<p>第一篇   毕业了</p>
+<p>第二篇   关于考试</p>
+<p>第三篇   放心自我</p>
+<p>第四篇   惆怅的心</p>
+<p>第五篇   畅谈美丽</p>
+<div>你是个居居</div>
+</body>
+</html>

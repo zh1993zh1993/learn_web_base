@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 880px;
+            height: 280px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+        ul{
+            list-style: none;
+            width: 2640px;
+            height: 280px;
+          background: black;
+        }
+        ul li{
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <ul>
+        <li><img src="../images5/7.jpg" alt=""></li>
+        <li><img src="../images5/6.jpg" alt=""></li>
+        <li><img src="../images5/4.jpg" alt=""></li>
+        <li><img src="../images5/3.jpg" alt=""></li>
+        <li><img src="../images5/7.jpg" alt=""></li>
+        <li><img src="../images5/6.jpg" alt=""></li>
+    </ul>
+</div>
+<script src="../jquery-1.11.3/jquery.js"></script>
+<script>
+    $(function () {
+    //    0:定义变量保存偏移位
+        var offset=0
+    //    让图片滚动起来
+        var timer;
+        function autoPlay(){
+            timer=setInterval(function () {
+                offset+=-10
+                if (offset<=-1760){
+                    offset=0
+                }
+                $("ul").css("marginLeft",offset)
+            },50)
+        }
+        autoPlay();
+    //    监听li的移入移出事件
+        $("ul>li").hover(function () {
+            //停止滚动
+        clearInterval(timer)
+            //给非当前元素增加蒙版
+            $(this).siblings().stop().fadeTo(100,0.5)
+        //    去除当前选中的蒙版
+            $(this).stop().fadeTo(100,1)
+        },function () {
+            //继续滚动
+            autoPlay();
+        //    去除所有蒙版,1是没有蒙版透明度的意思
+            $("li").stop().fadeTo(100,1)
+        })
+    })
+</script>
+</body>
+</html>

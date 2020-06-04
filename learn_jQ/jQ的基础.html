@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+    </style>
+    <script src="../jquery-1.11.3/jquery.js"></script>
+</head>
+<body>
+<div></div>
+<div class="box"></div>
+<div id="div1"></div>
+
+<script>
+    $(function () {
+        var $div=$('div');
+        var $div1=$('.box');
+        var $div2=$('#div1');
+        $div.css({
+            background:'red'
+        });
+        $div1.css({
+            background:'yellow'
+        });
+        $div2.css({
+            background:'blue',
+            width:'800px'
+        })
+    })
+
+
+</script>
+</body>
+</html>

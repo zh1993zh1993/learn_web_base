@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="wrapper" style="width: 300px;;height: 300px;background-color: red">
+    <div class="box" style="width: 150px;height: 150px;background-color: palegreen"></div>
+</div>
+<script>
+    var wrapper=document.getElementsByClassName('wrapper')[0];
+    var box=document.getElementsByClassName('box')[0];
+    wrapper.onclick=function (e) {
+        //事件源对象
+        var event=e||window.event;//兼容性
+        var target=event.target||event.srcElement;//事件源对象兼容性
+        console.log(target);//显示事件源对象
+    }
+</script>
+</body>
+</html>

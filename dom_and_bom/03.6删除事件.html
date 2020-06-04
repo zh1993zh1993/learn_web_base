@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<div>1</div>
+<div>2</div>
+<div>3</div>
+<script>
+    var  divs=document.querySelectorAll('div');
+    divs[0].onclick=function () {
+        alert('11');
+        //传统方式的解绑（删除）事件
+        divs[0].onclick=null
+    }
+    // divs[1].addEventListener('click',function () {
+    //     alert('22')
+    // })
+    divs[1].addEventListener('click',fn);//里面的fn不需要调用时加小括号
+    function fn() {
+        alert('22');
+        //监听事件中的删除事件方法
+        divs[1].removeEventListener('click',fn)
+    }
+</script>
+</body>
+</html>

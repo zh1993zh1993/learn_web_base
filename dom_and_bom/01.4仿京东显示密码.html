@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 400px;
+            border-bottom: 1px solid #ccc;
+            margin: 100px auto;
+        }
+        .box input{
+            width: 370px;
+            height: 30px;
+            border: 0;
+            outline: none;//去掉input的边框
+
+        }
+        .box img{
+            width: 25px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <input type="password" id="pwp">
+    <label for="">
+        <img src="../images5/9.png" alt="" id="eye">
+    </label>
+</div>
+<script>
+    var pwp=document.getElementById('pwp');
+    var eye=document.getElementById('eye');
+    var flag=0;
+    eye.onclick=function () {
+        //点击一次后flag一定要发生变化
+        //判断操作
+        if (flag==0){
+            pwp.type='text';
+            eye.src='../images5/8.png';
+            flag=1//赋值操作
+        } else {
+            pwp.type='password';
+            flag=0;//赋值操作
+            eye.src='../images5/9.png';
+        }
+
+    }
+</script>
+</body>
+</html>

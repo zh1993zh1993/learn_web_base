@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>阻止事件冒泡</title>
+    <style>
+        img{
+            width: 400px;
+
+        }
+    </style>
+</head>
+<body>
+<div><img src="../../images5/1.jpg"></div>
+<script>
+    var img=document.getElementsByTagName('img')[0];
+    document.onclick=function(){
+        alert("点我干啥")
+    };
+    img.onclick=function (e) {
+      //输出仙人和改变颜色
+      //  e.stopPropagation();//取消事件冒泡
+      //   e.cancelBubble=true;
+      //   stopBubble(e);//获取封装函数
+        e.stopPropagation();
+        this.style.display='none'
+
+    }
+</script>
+</body>
+</html>

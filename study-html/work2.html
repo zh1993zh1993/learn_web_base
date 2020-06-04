@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+   <!-- <style>
+        p{
+            font-size: 50px;
+            color: cadetblue;
+            text-decoration: line-through;//字体中间横线
+        }
+    </style>-->
+    <!--引入外部链接，详见work2.css-->
+
+<link href="../images1/css/work2.css" type="text/css" rel="stylesheet">
+
+
+</head>
+<body>
+
+<!--<h2 style="font-size: 20px;color: aqua">行内式</h2>
+<h2>内嵌式CSS</h2>
+<p>使用style标签可以定义内嵌式CSS样式表，Style标记位于head头部标记中，title标记之后</p>-->
+<h3>通过链入式引入 CSS样式表</h3>
+<p>通过link标记可以将拓展名为.css的外部样式表引入 到HTML文件中</p>
+<!--id选择器-->
+<p id="one">文本选择一</p>
+<p id="two">文本选择二</p>
+<!--类选择器-->
+<h2>二级标题文本</h2>
+<p class="one">段落文本一</p>
+h2>标签选择器</h2>
+<p>标签名直接作为识别的标记</p>
+<p>普通段落文本标签</p><!--（5）标签指定式选择器-->
+<p class="special"> 指定了特定样式的段落文本标签（红色）</p>
+<h2 class="special">指定了特定样式的标题文本标签（绿色）</h2>
+<!--后代选择器:内层标记就成为外层标记的后代-->
+<p>这里面有两个字是<strong>红色的</strong></p>
+<!--并集选择器：
+h2,h3,p{
+color:red;
+}-->
+<h3>定义字体的大小，字体，粗细，风格</h3>
+<!--font-weight: bolder:更粗的字体;bold:粗体：lighter：更细的字体-->
+
+<!--font-style:italic：浏览器会显示斜体的字体样式。-->
+<h4>外链接字体word-wrap属性用于实现长单词和URL地址的自动转换,
+    取值为：break-word http://www.badu.com</h4>
+<!--@font-face{
+    font-family: "Arial Black";
+    src: url("../font2/ROCK.TTF");
+}
+h4{
+    font-family:ROCK.TTF;
+    font-size:100px;
+ }-->
+<!--.two{
+				word-wrap: break-word;
+			}-->
+<!--
+text-transform:uppercase:全部字母转换成大写/lowercase：全转小写
+text-decoration:underline下划线/overline上划线/line-through删除线
+text-align:left文本居左/right居右/center居中
+text-indent:2em;/**首行缩进属性，仅对块级元素生效，对行内元素无效**/
+white-space:空白符处理
+normal：常规默认
+pre：预格式化，按文档的书写格式保留空格、空行原样显示。
+nowrap：空格空行无效，强制文本不能换行，除非遇到换行标记<br />
+内容超出元素的边界也不换行，若超出浏览器页面则会自动增加滚动条。
+text-shadow：10px水平阴影距离 10px垂直阴影距离 10ox模糊阴影距离 blue颜色/阴影效果
+text-overflow：clip修剪溢出文本，ellipsis省略溢出文本，有省略号
+p{/**标签选择器  权重为1**/
+				color:red ;
+			}
+			.one{/*类选择器  权重为10 */
+				color:green;
+			}
+			#header{/*标记选择器  权重为100*/
+				color:blue!important;/**！important具有最大优先权**/
+-->
+
+</body>
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div.container-fluid{
+            width: 100%;
+            height: 1300px;
+            background:url("images/2.png");
+        }
+        div.row.header{
+            margin-top:60px;
+            height: 100px;
+        }
+        div.row.header>.message{
+            font-size: 35px;
+            text-align: center;
+        }
+        .row.action{
+            margin-top: 20px;
+            height: 500px;
+        }
+        .row.action>.white{
+            width: 400px;
+            height: 300px;
+            background: white;
+            margin-top: 20px;
+            margin-left: 65px;
+        }
+        .row.action>.white>.org{
+            position: absolute;
+            width: 400px;
+            height: 61px;
+            background:orange;
+            text-align: center;
+            left: 0px;
+            top: 240px;
+        }
+        .row.action>.white>.org>a{
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            margin-top: 15px;
+        }
+        .white>.one{
+            position: absolute;
+            top: 60px;
+            width: 360px;
+            height: 55px;
+            border: 1px solid darkgray;
+        }
+        .white>.one>#old{
+            height: 30px;
+            transform: translate(50px,13px);
+            border-right: none;
+            border-top: none;
+            border-bottom:none;
+            border-left:0.1px solid black;
+            outline: none;
+            padding: 10px;
+        }
+        .white>.one>label>#us{
+            height: 25px;
+            transform: translate(-186px,12px);
+        }
+        .white>.two{
+            position: absolute;
+            top: 130px;
+            width: 360px;
+            height: 55px;
+            border: 1px solid darkgray;
+        }
+        .white>.two>#old1{
+            height: 30px;
+            transform: translate(50px,13px);
+            border-right: none;
+            border-top: none;
+            border-bottom:none;
+            border-left:0.1px solid black;
+            outline: none;
+            padding: 10px;
+        }
+        .white>.one>label>#us{
+            height: 25px;
+            transform: translate(-186px,12px);
+        }
+        .white>.two>label>#lc{
+            height: 25px;
+            transform: translate(-186px,12px);
+        }
+        .row.action>.people{
+            width: 400px;
+            height: 410px;
+            background: white;
+            margin-top: 20px;
+            margin-left: 65px;
+
+        }
+        .row.action>.people>.gr{
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            border-radius: 65px;
+            border: 2px solid red;
+            top: 15px;
+            left: 100px;
+            background:  url(images/b1.jpg) 0 0 no-repeat;
+        }
+        .row.action>.people>.kx{
+            position: absolute;
+            display: inline-block;
+            color: orange;
+            top: 250px;
+            left: 170px;
+            font-size: 20px;
+        }
+        .row.action>.people>.orange1{
+            position: absolute;
+            width: 400px;
+            height: 81px;
+            background:orange;
+            top: 276px;
+            left: 0;
+            margin-top: 53px;
+            float: left;
+        }
+        .row.action>.people>.orange1>.left{
+            width: 200px;
+            border-right:1px solid white;
+            transform: translateY(13px);
+        }
+        .row.action>.people>.orange1>.right{
+            width: 200px;
+           transform: translateY(-50px);
+           margin-left: 200px;
+        }
+        .row.action>.people>.orange1>.left>p{
+            color: white;
+            margin-left: 86px;
+        }
+        .row.action>.people>.orange1>.right>p{
+            color: white;
+            margin-left: 86px;
+        }
+        .row.action>.zl{
+            width: 400px;
+            height: 310px;
+            margin-top: 20px;
+            margin-left: 50px;
+
+        }
+        .row.action>.zl>div{
+            width: 400px;
+            height: 67px;
+            background-color: orange;
+            border-bottom: 1px solid #4A4A4A;
+        }
+
+        .row.action>.zl>div:nth-child(4){
+            border-bottom: none;
+        }
+        .row.action>.zl>div>.oI{
+            width: 40px;
+            height: 67px;
+            margin-left: 30px;
+        }
+        .row.action>.zl>div>.oI.one{
+            background: url("images/img-sprite.png") no-repeat;
+            background-position: 7px 25px;
+        }
+        .row.action>.zl>div>.oI.two{
+            background: url("images/img-sprite.png") no-repeat;
+            background-position: -25px 25px;
+        }
+        .row.action>.zl>div>.oI.three{
+            background: url("images/img-sprite.png") no-repeat;
+            background-position: -55px 25px;
+        }
+        .row.action>.zl>div>.oI.four{
+            background: url("images/img-sprite.png") no-repeat;
+            background-position: -85px 25px;
+        }
+        .row.action>.zl>p.oM{
+            margin-left: 100px;
+           transform: translateY(-240px);
+        }
+        .row.action>.zl>p.tM{
+            margin-left: 100px;
+            transform: translateY(-205px);
+        }
+        .row.action>.zl>p.thM{
+            margin-left: 100px;
+            transform: translateY(-170px);
+        }
+        .row.action>.zl>p.fM{
+            margin-left: 100px;
+            transform: translateY(-140px);
+        }
+        .row.action>.zl>p>a{
+            text-decoration: none;
+            color: white;
+            font-size: 15px;
+        }
+        .row.action>.zl>p>a:hover{
+            cursor: pointer;
+        }
+        .row.action>.zl>.tht{
+            position: absolute;
+            top: 90px;
+            left: 330px;
+            width: 34px;
+            height: 30px;
+            border-radius: 8px;
+            background: dimgrey;
+            padding: 7px;
+            display: none;
+        }
+        span {
+            background: red;
+        }
+    </style>
+</head>
+<link rel="stylesheet" href="css/bootstrap.css">
+<script src="jquery-1.11.3/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script>
+
+    $(function () {
+   $(".row.action>.zl>div").hover(function () {
+       $(this).css("background","red")
+   },function () {
+       $(this).css("background","orange")
+   })
+        $(".org").hover(function () {
+            $(this).css("background","red")
+        },function () {
+            $(this).css("background","orange")
+        })
+        $(".tM").hover(function () {
+            $(".tht").stop().fadeIn(1000)
+        },function () {
+            $(".tht").stop().hide()
+        })
+    })
+</script>
+<body>
+<div class="container-fluid">
+    <div class="row header">
+        <div class="col-12 message" ><b>个人信息</b></div>
+    </div>
+    <div class="row action ">
+        <div class="col-lg-4 col-md-6 col-12 white">
+            <div class="one">
+                <input type="password" id="old" autofocus="autofocus" placeholder="请输入旧密码">
+                <label for=""> <img src="images/user.png" alt="" id="us"></label>
+            </div>
+            <div class="two">
+                <input type="password" id="old1" placeholder="请输入新密码">
+                <label for=""> <img src="images/lock.png" alt="" id="lc"></label>
+            </div>
+            <div class="org">
+                <a href="#">修改密码</a>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6  col-12 people">
+            <div class="gr">
+            </div>
+            <p class="kx">科学怪人</p>
+            <div class="orange1">
+            <div class="left">
+                <p><b>2.5万</b></p>
+                <p>粉丝</p></div>
+            <div class="right">
+                <p><b>100</b></p>
+                <p>关注</p></div>
+            </div>
+            </div>
+        <div class="col-lg-4 col-md-12 zl col-12">
+            <div> <div class="oI one"></div></div>
+            <div> <div class="oI two"></div></div>
+            <div> <div class="oI three"></div></div>
+            <div> <div class="oI four"></div></div>
+            <p class="oM"><a>个人资料</a></p>
+            <p class="tM"><a>消息</a></p>
+            <p class="thM"><a>设置</a></p>
+            <p class="fM"><a>退出登录</a></p>
+            <div class="tht">13</div>
+        </div>
+        </div>
+        </div>
+</div>
+</body>
+</html>

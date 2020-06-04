@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        tr{
+            text-align: center;
+            border:1px solid black;
+            font-size: 20px;
+            font-family: "微软雅黑";
+
+        }
+        input:hover{
+            background-color: #0a568c;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<table border="1" cellspacing="0" width="600px" id="table1">
+    <thead style="background-color: gray;" >
+    <td>商品名称</td>
+    <td>数量</td>
+    <td>价格</td>
+    <td>操作</td>
+    </thead>
+    <tbody>
+    <tr>
+        <td>防滑真皮休闲鞋</td>
+        <td>12</td>
+        <td>¥568.50</td>
+        <td><input type="button"value="删除" ></td>
+    </tr>
+    <tr>
+        <td  class="nTr">抗疲劳神奇圈圈</td>
+        <td class="nTr">12</td>
+        <td class="nTr">¥49</td>
+        <td class="nTr"><input type="button"value="删除" id="sc"></td>
+    </tr>
+    <tr>
+        <td colspan="4"><input type="button"value="增加订单" id="add"></td>
+    </tr>
+    </tbody>
+</table>
+<script>
+    window.onload=function(){
+        var oTab=document.getElementById('table1');
+        var oSc=document.getElementById('sc');
+        var oAdd=document.getElementById('add');
+        var nTr=document.getElementsByClassName('nTr');
+        oAdd.onclick=function() {
+            var oTr = document.createElement('tr');
+            for (i = 0; i < nTr.length; i++) {
+                var oTd = document.createElement('td');
+                oTd.innerHTML = nTr[i].innerHTML;
+                oTr.appendChild(oTd);
+
+            }
+            oTab.tBodies[0].appendChild(oTr);
+        }
+            }
+
+
+
+</script>
+</body>
+</html>

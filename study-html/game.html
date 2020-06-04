@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+/*系统产生随机数，1~100*/
+  do{ var num=Math.floor(Math.random()*100);
+   var guess=prompt('请输入您猜测的数字：');
+    //比较
+    if (isNaN(guess)){
+        alert('您输入的不是数字')
+    } else {
+        if (guess>num){
+            alert('您猜的数字太大了');
+            go_on=confirm('是否确认继续游戏')//全局变量+确认框
+        } else if (guess<num){
+            alert('您猜的数字太小了');
+            go_on=confirm('是否确认继续游戏')
+        } else {
+            alert('恭喜您猜对了，幸运数字是'+num)
+        }break;
+    }
+}while (go_on);
+    
+</script>
+</body>
+</html>

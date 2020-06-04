@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button>更改颜色</button>
+<script>
+    /*
+  var btn=document.querySelector('button');
+  btn.onclick=bgChange;
+  function random(number) {
+      return Math.floor(Math.random()*(number+1));
+  }
+  function bgChange() {
+      var bgCol='rgb('+random(255)+','+random(255)+','+random(255)+')';
+      document.body.style.backgroundColor=bgCol;
+      
+  }*/
+    var btn=document.querySelector('button');
+    btn.onclick=bgChange;
+    function random(number) {
+        return Math.floor(Math.random()*(number+1));
+
+    }
+    function bgChange() {
+        var bgCol='rgb('+random(255)+','+random(255)+','+random(255)+')';
+        document.body.style.backgroundColor=bgCol;
+
+    }
+</script>
+
+</body>
+</html>

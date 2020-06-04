@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button>显示时间</button>
+<div>时间</div>
+<p>55555</p>
+<script>
+    var oBtn=document.querySelector('button');
+    var divS=document.querySelector('div');
+    oBtn.onclick=function () {
+        divS.innerText=getDate();
+    }
+//    封装显示现在时间的函数
+    var getDate=function () {
+
+
+    var date=new Date();
+    var year=date.getFullYear();
+    var month=date.getMonth();
+    var dates=date.getDate();//返回的是几号
+    var arr=['星期日','星期一','星期二','星期三','星期四','星期五','星期六']
+    var day=date.getDay();
+    return '今天是'+year+'年'+month+'月'+dates+'日'+arr[day];
+     }
+     //元素可以不用添加事假就能直接出来
+     var pP=document.querySelector('p');
+    // pP.innerText=getDate();
+    pP.innerHTML=getDate()
+</script>
+</body>
+</body>
+</html>

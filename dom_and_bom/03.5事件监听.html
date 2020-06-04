@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button>传统注册事件</button>
+<button>方法监听注册事件</button>
+<button>IE9以前支持</button>
+<script>
+    var btns=document.querySelectorAll('button');
+    //传统方式注册事件
+    btns[0].onclick=function () {
+        alert('hh')
+    }
+    //一个对象只能添加一次事件，且第二次覆盖第一次事件
+    btns[0].onclick=function () {
+        alert('hhhhh')
+    }
+//    事件监听注册事件,addEventListener里面的事件方法是字符串，带引号，不加on
+    btns[1].addEventListener('click',function () {
+        alert('heheheh')
+    });
+    //一个对象可以添加多次事件
+    btns[1].addEventListener('click',function () {
+        alert('he啦啦啦啦啦')
+    })
+    btns[2].attachEvent('click',function () {
+        alert('11')
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+document.onkeypress=function (e) {
+    console.log(e)//有charCode只能响应字符类键盘按键，监测很准，有对应的ASCII码
+}
+document.onkeydown=function (e) {
+    console.log(e)//没有charCode，可以监测所有键盘类的事件
+}
+</script>
+</body>
+</html>

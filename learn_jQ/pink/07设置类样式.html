@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: pink;
+            /*过渡效果*/
+            transition: all 0.8s;
+        }
+        .current{
+            /*width:400px;*/
+            /*height: 400px;*/
+            background: red;
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+<body>
+<div class="current"></div>
+<script src="../../jquery-1.11.3/jquery.js"></script>
+<script>
+    $(function () {
+        $("div").click(function () {
+        //     //    1,添加类addClass('')，里面的类名千万不能加点
+            $(this).addClass('current')
+        // //    2,删除类removeClass('')
+            $(this).removeClass('current')
+        //切换类 toggleClass(''),可以两个属性之间来回切换
+            $(this).toggleClass('current')
+        })
+    })
+</script>
+</body>
+</html>

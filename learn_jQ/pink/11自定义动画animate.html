@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: paleturquoise;
+            display: none;
+
+        }
+    </style>
+</head>
+<body>
+<button>动起来</button>
+<div></div>
+<script src="../../jquery-1.11.3/jquery.js"></script>
+<script>
+    $(function () {
+        $('button').click(function () {
+            //给div做动画效果，必须用对象
+            var timer=setInterval(function () {
+                $('div').animate({
+                    //必须给盒子加上定位
+                    // left:500,
+                    // top:300,
+                    // opacity:0.5,
+                    // width:400,
+                    // height:400
+                },function () {
+                    $('div').fadeIn(function () {
+                        $('div').fadeOut(1000)
+                    })
+                })
+            },1000)
+
+        })
+    })
+</script>
+</body>
+</html>

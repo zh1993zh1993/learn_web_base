@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<video src="../video/home_loop_720p.mp4" muted></video>
+<script src="../../jquery-1.11.3/jquery.js"></script>
+<script>
+    // myVideo.play();
+    $(function () {
+        var myVideo=document.querySelector('video');
+        //jQuery里必须加索引才能转换成dom才能使用play
+//原生JS里的video播放方法
+        $(myVideo)[0].play()
+
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+     <!--    引入jQuery-->
+    <script src="../jquery-1.11.3/jquery.js"></script>
+</head>
+<body>
+<img src="https://imgcps.jd.com/ling/20118590/5aW954mp5LiN6L-HOeWdlzk/5Yqo5ryr5ZGo6L655a6e55So55m-6LSn/p-5bd8253082acdd181d02fa7a/f6066385.jpg" alt="">
+<script>
+    /*
+    //利用原生JS 获取img标签
+    window.onload=function () {
+        var img=document.getElementsByTagName('img')[0]
+        console.log(img)
+        var width=window.getComputedStyle(img).width;
+        console.log(width)//输出图片宽度
+    }
+    //区别：js是全部加载完执行，jQuery是图片加载之前执行
+    //用jQuery来获取img标签，以及其宽度
+    $(function () {
+        var $img=$('img')[0];
+        console.log($img);
+        var $width=$img.width;
+        console.log($width);
+    })
+    //原生js入口函数
+    // window.onload=function (ev) {
+    //
+    // }
+    //jQuery的入口函数
+    // $(document).ready(function () {
+    //     alert('hell')
+    // })
+    //jQuery的四种写法
+    //第一种
+    // $(document).ready(function () {
+    //     alert('hell')
+    // })
+    // //第二种
+    // jQuery(document).ready(function () {
+    //     alert('hell')
+    // })
+    //第三种(推荐)
+    // $(function () {
+    //     alert('hell')
+    // })
+    //第四种
+    // jQuery(function () {
+    //     alert('hell')
+    // })
+//    js与jQuery的区别
+    */
+//    区别二：当原生js有多个入口函数时，最后一个会覆盖前一个
+//    jQuery有多个入口函数时是按顺序依次弹出
+//     $(function () {
+//         alert('hhh')
+//     })
+//     $(function () {
+//         alert('hhh222')
+//     })
+//    jQuery冲突问题,引入多个库有冲突时
+//    释放$符号
+//     jQuery.noConflict();
+//    jQuery(function () {
+//
+//         alert('hello')
+//     })
+//    自定义符号
+    var hello=jQuery.noConflict();
+    hello(function () {
+
+            alert('hello')
+        })
+
+</script>
+</body>
+</html>

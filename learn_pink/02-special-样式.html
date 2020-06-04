@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        a{
+            /*取消移动端的高亮*/
+            -webkit-tap-highlight-color: transparent;
+        /*  手指放到图片或者链接上，  禁用长按菜单时的弹出菜单*/
+     img ,a{
+             -webkit-touch-callout: none;}
+
+        }
+        input{
+            /*取消iphone移动端按钮外观边框，就可自定义边框效果*/
+            -webkit-appearance: none;
+        }
+    </style>
+</head>
+<body>
+<!--二倍精灵图做法-->
+<!--在firework里面把精灵图等比例缩放为原来的一半
+之后根据大小测量坐标
+注意代码里面background-size也要写：精灵图原来宽度的一半
+-->
+<!--图片格式-->
+<!--
+DPG图片压缩技术：京东自主研发，可节省用户近50%的浏览量，提升用户的网页打开速度
+webp图片格式：谷歌开发的价款图片加载速度的图片格式，图片体积是JPEG的三分之二，节省大量的服务器宽带资源和数据空间
+
+-->
+<a href="#">白马</a>
+<input type="button" value="按钮">
+</body>
+</html>

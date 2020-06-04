@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="../jquery-1.11.3/jquery.js"></script>
+<script>
+    //使用原生js遍历数组，值在前，索引在后
+  var arr=[1,4,8,12,9,8];//真实数组
+  // arr.forEach(function (value, index) {
+  //     console.log((index + ':' + value));
+  // })数组遍历,forEach方法不能遍历伪数组
+  //伪数组
+    var obj={0:'M',1:'N',length:2}
+    //使用jQuery遍历数组,且可以遍历伪数组，索引在前，值在后
+    // $.each(arr,function (index,value) {
+    //     console.log((index + '.....' + value));
+    // })
+    // $.each(obj,function (index,value) {
+    //     console.log((index + '.....' + value));
+    // })
+    //map返回的是未定义的空数组，且不能遍历伪数组，forEach返回的是undefined
+    // var res1=arr.map(function (value, index, array) {
+    //     console.log((index + '..map..' + value));
+    // });
+    // console.log(res1);
+//    使用jQuery中的map方法,能遍历伪数组
+    $.map(obj,function (value,index) {
+        console.log(index,value)
+    })
+   // $.holdReady(true)//暂停入口函数的执行，写在入口函数外面
+   //  $.holdReady(false)//恢复入口函数，写在要先执行的代码里面
+</script>
+</body>
+</html>

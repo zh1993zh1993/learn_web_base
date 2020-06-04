@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .father{
+            width: 400px;
+            height: 400px;
+            background-color: red;
+        }
+        .son{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+<div class="father">
+    <div class="son"></div>
+</div>
+<script src="../../jquery-1.11.3/jquery.js"></script>
+<script>
+    $(function () {
+        // 写法1
+        //"mouseenter mouseleave"移入移出不会产生事件冒泡，但是mouseover和mouseout会产生
+        // $(".father").on("mouseenter mouseleave",function () {
+        //     alert("11")
+        // })
+        // 写法2,如果是一个事件,那么移入移出并存
+        $(".father").hover(function () {
+            alert("移入")
+        },function () {
+            alert("移出")
+        })
+    })
+</script>
+</body>
+</html>

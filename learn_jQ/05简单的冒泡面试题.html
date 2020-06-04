@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="../jquery-1.11.3/jquery.js"></script>
+<script>
+    $(function () {
+        $('span').click(function () {
+            alert('hhhh')
+        })
+    //    自动触发事件，且跳转默认浏览器。可以在a标签内添加span，形成事件冒泡
+        $('span').trigger('click')
+    })
+</script>
+<a href="http://www.baidu.com"><span>注册</span></a>
+</body>
+</html>

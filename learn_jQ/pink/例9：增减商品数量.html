@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .quantity-form{
+            width: 500px;
+            height: 100px;
+            border: 1px solid black;
+            margin: 100px auto;
+            padding: 50px;
+        }
+        a{
+            display: block;
+            width: 50px;
+            height: 50px;
+            background-color: #d4d4d4;
+            font-size: 40px;
+            padding-left: 20px;
+            text-decoration: none;
+        }
+        input{
+            width: 200px;
+            height: 15px;
+            border: 2px solid #000;
+        }
+        .p-price{
+            position: absolute;
+            left: 800px;
+            top: 178px;
+            font-size: 50px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="p-price">￥12.60</div>
+<div class="p-num">
+<div class="quantity-form">
+    <a href="javascript:;" class="decrement">-</a>
+    <input type="text" class="itxt" value="1">
+    <a href="javascript:;" class="increment">+</a>
+</div>
+</div>
+<script src="../../jquery-1.11.3/jquery.js"></script>
+<script>
+    $(function () {
+        $(".increment").click(function () {
+            //得到当前兄弟文本框的值
+            var n=$(this).siblings(".itxt").val()
+            n++;
+            $(this).siblings(".itxt").val(n)
+        //    计算小计模块，根据文本框的值乘以当前商品的价格，就是商品的小计
+        //    当前商品的价格：p
+            var p=$('.p-price').html();
+           // 去掉第一位的符号，只留下数字
+            p=p.substr(1)
+            var num= p*2
+            //toFixed(2):保留小数点几位（2位）
+            var price=num.toFixed(2)
+        //    小计模块
+            $(".p-price").html("￥"+price)
+        })
+        $(".decrement").click(function () {
+            //得到当前兄弟文本框的值
+            var n=$(".itxt").val()
+            if (n==1){
+                return false
+            }
+            n--;
+            $(this).siblings(".itxt").val(n)
+            var p=$('.p-price').html();
+            // console.log(p);
+            // 去掉第一位的符号，只留下数字
+            p=p.substr(1)
+            // 减去自身的一半
+            var num =(p/2).toFixed(2);
+            var price=(p-num).toFixed(2);
+            //    小计模块parents(".p-num"),返回指定的祖先元素
+            $(".p-price").html("￥"+price)
+        })
+    //    用户修改文本框的值 计算 小计模块
+        $(".itxt").change(function () {
+        //    先得到文本框的值 乘以当前商品单价
+            var n=$(this).val()
+            //当前商品单价
+            var p=$(this).parents(".p-num").siblings(".p-price").html()
+            // console.log(p);
+            // 去掉第一位的符号，只留下数字
+            p=p.substr(1)
+            $(".p-price").html("￥"+(p*n).toFixed(2))
+        })
+    //    计算总计和总额模块
+        getSum();
+        function getSum() {
+            var count=0;//计算总件数
+            var money=0;//计算总价钱
+            $(".itxt").each(function (i,ele) {
+                count+=parseInt($(ele).val());
+            });
+            $(".amount-sum em").text(count);
+            $(".p-sum").each(function (i,ele) {
+                money+=parseFloat($(ele).text().substr(1))
+            })
+            $(".price-sum em").text("￥"+money.toFixed(2));
+        }
+    //    删除商品模块
+    //    1，商品后面的删除按钮
+        $(".p-action a").click(function () {
+        //    删除的是当前商品
+            $(this).parents(".cart-item").remove();
+            getSum();
+        })
+    //    2,删除选中的按钮
+        $(".remove-batch").click(function () {
+        //    删除的是小的复选框选中的商品
+            $(".j-checkbox:checked").parents(".cart-item").remove();
+            getSum();
+        })
+        //清空购物车，删除所有
+        $(".clear-all").click(function () {
+            $(".cart-item").remove()
+            getSum();
+        })
+
+    })
+</script>
+</body>
+</html>

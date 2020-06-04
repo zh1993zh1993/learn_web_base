@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .class1{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+        .class2{
+            border:10px solid #000;
+        }
+    </style>
+</head>
+<body>
+<script src="../jquery-1.11.3/jquery.js"></script>
+<script>
+    $(function () {
+       /*
+       * 1.addClass(class|fn)
+       * 2.removeClass(class|fn)
+       * 3.toggleClass(class|fn)
+       * */
+       var btns=document.getElementsByTagName('button')
+        btns[0].onclick=function () {
+            //如果要添加多个类，就空格然后类名
+            $('div').addClass('class1 class2')
+        };
+        btns[1].onclick=function () {
+            //如果要删除多个类，就空格然后类名
+            $('div').removeClass('class1 class2')
+        };
+        btns[2].onclick=function () {
+        //    有就删除，没有就添加
+        $('div').toggle('class1 class2')
+        }
+    })
+</script>
+<button>添加类</button>
+<button>删除类</button>
+<button>切换类</button>
+<div></div>
+</body>
+</html>

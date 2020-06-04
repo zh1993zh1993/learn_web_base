@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+<script src="../jquery-1.11.3/jquery.js"></script>
+<script>
+    $(function () {
+        /*
+        jQ原型上的核心方法和属性
+       1，jQuery获取jq版本号
+       2，selector实例默认的选择器取值
+       3，length实例默认的长度
+       4，push给实例添加新元素
+       5，splice按照指定下标指定数量删除元素，也可以替换删除的元素
+       6，toArray把实例转换为数组返回
+
+       7，get 获取指定下标的元素，获取的是原生DOM
+       8,eq获取指定下标的元素，获取的是jQuery类型的实例对象
+       9，first获取实例中第一个元素，是jQuery类型的实例对象
+       10，last获取实例中最后一个元素，是jQuery类型的实例对象
+
+       11，each遍历实例，把遍历到的数据传给回调使用，然后把
+       回调的返回值收集起来组成一个新的数组返回
+        */
+        /*
+        var res=$("div")
+      var res2=res.toArray()
+        console.log(res2);*/
+        var res=$("div")
+        //get如果不传递参数，相当于调用了toArray()，获取真数组
+        console.log(res.get());
+        //如果传递参数，就是返回索引号为几的div
+        console.log(res.get(-1));
+    })
+</script>
+<div id="box1"></div>
+<div id="box2"></div>
+<div id="box3"></div>
+</body>
+</html>

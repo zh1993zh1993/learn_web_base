@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 440px;
+            height: 298px;
+            border: 1px solid #000;
+            margin: 50px auto;
+            overflow: hidden;
+        }
+        img{
+            width: 440px;
+            height: 298px;
+        }
+        .nav>li{
+            list-style: none;
+            width: 110px;
+            height: 50px;
+            background: orange;
+            float: left;
+           text-align: center;
+            /*行高，文字居中*/
+            line-height: 50px;
+        }
+        .nav .current{
+            background: #ccc;
+        }
+        .content li{
+            list-style: none;
+            display: none;
+        }
+        .content>.show{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <ul class="nav">
+        <li class="current">肖战1</li>
+        <li>肖战2</li>
+        <li>肖战3</li>
+        <li>肖战4</li>
+    </ul>
+    <ul class="content">
+        <li class="show"><img src="../images5/5.jpg" alt=""></li>
+        <li><img src="../images5/6.jpg" alt=""></li>
+        <li><img src="../images5/7.jpg" alt=""></li>
+        <li><img src="../images5/4.jpg" alt=""></li>
+    </ul>
+</div>
+<script src="../jquery-1.11.3/jquery.js"></script>
+<script>
+    $(function () {
+        $(".nav li").hover(function () {
+            $(this).addClass("current").siblings().removeClass("current")
+            //获取此导航的索引
+            var index=$(this).index()
+            //将赋值给下面的照片的索引
+            $(".content>li").eq(index).show().siblings().hide()
+        })
+    })
+</script>
+</body>
+</html>

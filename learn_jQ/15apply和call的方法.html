@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    /*
+apply和call的作用：
+专门用于修改方法内部的this
+格式：传参列表不一样
+call（对象，参数1，参数2，.....）
+apply（对象，数组）
+*/
+    // function test() {
+    //     console.log(this);
+    // }
+   // window.test()
+   //  var obj={"name":"zh"}
+    /*
+    1,通过   window.test找到test方法
+    2，通过apply(obj)找到的test方法内部的this修改为自定义对象
+    */
+    // window.test.apply(obj);
+   // window.test.call(obj);
+   //  function sum(a,b) {
+   //      console.log(this);
+   //      console.log((a + b));
+   //  }
+    // window.sum.call(obj,1,2)
+    /*
+   1,通过   window.sum找到sum方法
+    2，通过apply(obj)找到的test方法内部的this修改为自定义对象
+    3,将传入数组中的元素依次取出，传递给形参
+    */
+    // window.sum.apply(obj,[3,5])
+    //真数组转换为伪数组的一个过程
+    var arr=[1,3,5,7,9]
+    var obj={}
+        // 1,通过    [].push找到数组中的push方法
+        // 2，通过apply(obj)找到的push方法内部的this修改为自定义对象
+        // 3,将传入数组中的元素依次取出，传递给形参
+        var arr2=[]
+   arr2.push.apply(obj,arr);
+    console.log(obj);
+    window.onload=function (ev) {
+        //系统自带的伪数组
+        var res=document.querySelectorAll("div");
+    //自定义的伪数组
+        var obj={0:"zh",1:"33",length:2}
+        // var arr=[];//真数组
+        // [].push.apply(arr,obj)
+        // console.log(arr);
+        //兼容性伪数组转换成真数组的写法
+        var arr=[].slice.call(res)
+        console.log(arr);
+        // var arr2=[1,3,5,7,9]
+       // slice:如果slice方法什么参数都没有传递，
+        // 会将数组中的元素放到一个新的数组中，原样返回
+       // 如果传参，就是截取除本身角标外的参数值
+       // var res2=arr2.slice(2,4)//截取数组
+       //  console.log(res2);
+    }
+</script>
+<div>我是div</div>
+<div>我是div</div>
+<div>我是div</div>
+</body>
+</html>

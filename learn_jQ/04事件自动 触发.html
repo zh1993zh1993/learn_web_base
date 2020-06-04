@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .father{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+<script src="../jquery-1.11.3/jquery.js"></script>
+<script>
+    $(function () {
+        $('.son').click(function (event) {
+         alert('son');})
+
+            $('.father').click(function () {
+                alert('father')
+            })
+        // //自动触发事件1
+        // $('.father').trigger('click')
+        // //自动触发事件2
+        // $('.father').triggerHandler('click')
+        //自动触发事件，儿子会带上爸爸，触发事件冒泡
+        $('.son').trigger('click')
+        //自动触发事件，只有儿子，不会触发事件冒泡，两者区别在此
+        $('.son').triggerHandler('click')
+        $("input[type='submit']").click(function () {
+            alert('submit')
+            })
+
+          //如果利用trigger自动触发事件，会触发默认行为
+          // $("input[type='submit']").trigger('click')
+        //如果利用triggerHandler自动触发事件，不会触发默认行为
+        $("input[type='submit']").triggerHandler('click')
+
+    })
+</script>
+<div class="father">
+    <div class="son"></div>
+</div>
+<a href="http://www.baidu.com">注册</a>
+<form action="http://www.taobao.com">
+    <input type="text">
+    <input type="submit">
+</form>
+</body>
+</html>

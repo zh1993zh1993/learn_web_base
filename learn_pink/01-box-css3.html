@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scale=no">
+    <style>
+        /**{*/
+        /*    margin: 0;*/
+        /*padding: 0;*/
+        /*}*/
+        div:nth-child(1){
+            /*传统盒模型=width+border+padding*/
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            padding: 10px;
+            border: 10px solid red;
+        }
+        div:nth-child(2){
+            /*让盒子变成css3和种子模型，防止padding将盒子撑大*/
+            /*padding和border不会再撑大盒子，不兼容IE六七八，但是兼容移动端*/
+            box-sizing: border-box;
+            width: 200px;
+            height: 200px;
+            background-color: purple;
+            padding: 10px;
+            border: 10px solid blue;
+        }
+        /*物理像素：分辨率，苹果8的物理像素是750*/
+        /*在苹果8里，1px开发像素=2个物理像素*/
+    /* 我们准备的图片比实际需要的大小  大2倍，再手动缩小为自身需要的尺寸，这种方式就是两倍图   */
+    /*    常见移动端开发：*/
+    /* 单独制作   网址域名前面加m（mobile）可以打开移动端，以此来判断设备，如果是移动设备打开，则跳到移动端页面*/
+    /*  响应式制作  响应式兼容pc移动端，缺点：制作麻烦*/
+    /*    移动端技术解决方案：*/
+    /*  1.  移动端 浏览器以webkit内核为主，考虑其兼容性问题、可以放心使用H5标签和css3样式，浏览器的私有前缀
+    只需要考虑添加webkit即可*/
+    /*  2. css初始化 normalize.css*/
+    </style>
+</head>
+<body>
+<div></div>
+<div></div>
+</body>
+</html>

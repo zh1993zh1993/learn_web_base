@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text">
+<button>切换图片</button><br>
+<img src="../images5/4.jpg" alt="">
+<script src="../jquery-1.11.3/jquery.js"></script>
+<script>
+    $(function () {
+        // var btn=document.getElementsByTagName('button')[0];
+        // btn.onclick=function () {
+        //     var input=document.getElementsByTagName('input')[0];
+        //     //让文本框内的值等于下面src的链接
+        //     var text=input.value;
+        //     //修改img的src的属性节点的值
+        //     $('img').attr('src',text)
+        // }
+        $("button").click(function () {
+            var text=$("input").val()
+            $('img').attr('src',text)
+        })
+    })
+    
+</script>
+</body>
+</html>

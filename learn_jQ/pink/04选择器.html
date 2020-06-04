@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ol>
+    <li>我是ol的li</li>
+    <li>我是ol的li</li>
+    <li class="item">我是ol的li</li>
+    <li>我是ol的li</li>
+    <li>我是ol的li</li>
+    <li>我是ol的li</li>
+</ol>
+<ul>
+    <li>我是ol的li</li>
+    <li>我是ol的li</li>
+    <li >我是ol的li</li>
+    <li>我是ol的li</li>
+    <li>我是ol的li</li>
+    <li>我是ol的li</li>
+</ul>
+<div class="current">俺有current</div>
+<div>俺木有current</div>
+<script src="../../jquery-1.11.3/jquery.js"></script>
+<script>
+    $(function () {
+    //1，兄弟元素,选择item的所有兄弟，除了自身元素外的所有亲兄弟
+        $('ol .item').siblings('li').css('font-size','50px')
+    //    查找当前元素之前的所有同辈元素
+        $('ol .item').nextAll('li').css('font-size','50px')
+        //    查找当前元素后的所有同辈元素
+        $('ol .item').prevAll('li').css('font-size','50px')
+    //    选择第n元素
+    //    （1）利用选择器的方式选择
+        $("ul li:eq(2)").css('font-size','50px')
+        //    （2）利用选择方法的方式选择
+        var index=4;//可以定义变量
+        $("ul li").eq(3).css('font-size','50px')
+        $("ul li").eq(index).css('font-size','50px')
+    //    判断是否有某个类
+        console.log($("div").hasClass("current"));
+
+
+    })
+</script>
+</body>
+</html>

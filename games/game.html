@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .bg{
+            position:relative;
+            width: 1301px;
+            height: 631px;
+            padding-top: 20px;
+            padding-left: 60px;
+          }
+        .bg img{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        .bg>.game_bg{
+            position: relative;
+            width: 515px;
+            height: 594px;
+           margin-top: 24px;
+            margin-left: 410px;
+            background: rgba(255,255,255,.2);
+            border: 1px ;
+            border-radius: 10px;
+        }
+
+        .game_bg>.big{
+            position: absolute;
+            display: inline-block;
+            margin-top: 69px;
+            margin-left: 27px;
+            width: 466px;
+            height: 427px;
+        }
+        .game_bg>h3{
+            color: white;
+            position: absolute;
+            margin-left: 205px;
+        }
+        .game_bg>.small{
+            display: inline-block;
+            width: 235px;
+            height: 62px;
+            position: absolute;
+            margin-left: 144px;
+            margin-top: 509px;
+        }
+        .game_fixed>.left{
+            position: absolute;
+            color: white;
+            margin-top: 190px;
+            margin-left: 140px;
+            font-size: 14px;
+
+        }
+        .game_fixed{
+            position: fixed;
+            width: 515px;
+            height: 594px;
+            top: 51px;
+            left: 478px;
+            background: rgba(255,255,255,.2);
+            border: 1px ;
+            border-radius: 10px;
+            display: none;
+        }
+        .game_fixed>h3{
+            color: white;
+            position: absolute;
+            margin-left: 205px;
+        }
+        .game_fixed>.bigS{
+            position: absolute;
+            display: inline-block;
+            margin-top: 69px;
+            margin-left: 27px;
+            width: 466px;
+            height: 427px;
+        }
+        .game_fixed>.bk{
+            display: inline-block;
+            width: 235px;
+            height: 62px;
+            position: absolute;
+            margin-left: 144px;
+            margin-top: 509px;
+        }
+        .game_fixed>.right{
+            position: absolute;
+            color: white;
+            margin-top: 190px;
+            margin-left: 290px;
+            font-size: 14px;
+        }
+        .game_bg>p{
+            display: none;
+        }
+
+
+        .coin{
+            width: 290px;
+            height: 230px;
+            position: fixed;
+            top: 300px;
+            left: 600px;
+            display: none;
+        }
+        .coin>img{
+            width: 25px;
+            height:25px;
+        }
+        .coin>.coin1{
+            position: absolute;
+            top: 30px;
+            left: 50px;
+        }
+        .coin>.coin2{
+            position: absolute;
+            top:60px;
+            left: 140px;
+        }
+        .coin>.coin3{
+            position: absolute;
+            top:90px;
+            left: 60px;
+        }
+        .coin>.coin4{
+            position: absolute;
+            top:63px;
+            left: 260px;
+        }
+        .coin>.coin5{
+            position: absolute;
+            top:110px;
+            left: 20px;
+        }
+        .coin>.coin6{
+            position: absolute;
+            top:180px;
+            left: 110px;
+        }
+        .coin>.coin7{
+            position: absolute;
+            top:150px;
+            left: 160px;
+        }
+        .coin>.coin8{
+            position: absolute;
+            top:130px;
+            left: 200px;
+        }
+        .coin>.coin9{
+            position: absolute;
+            top:90px;
+            left: 190px;
+        }
+        .coin>.coin10{
+            position: absolute;
+            top:100px;
+            left: 250px;
+        }
+        .coin>.coin11{
+            position: absolute;
+            top:0px;
+            left: 240px;
+        }
+        .coin>.coin12{
+             position: absolute;
+             top:50px;
+             left: 200px;
+         }
+        .coin>.coin13{
+            position: absolute;
+            top:190px;
+            left: 70px;
+        }
+        .coin>.coin14{
+            position: absolute;
+            top:100px;
+            left: 100px;
+        }
+        .coin>.coin15{
+            position: absolute;
+            top:180px;
+            left: 200px;
+        }
+        .coin>.red{
+            position: absolute;
+            top: 175px;
+            left: 5px;
+            width: 50px;
+            height:50px;
+        }
+        .right>.timeC{
+            margin-left:10px;
+        }
+        .mask{
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        .mask>.login{
+            position: absolute;
+            left: 600px;
+            top: 100px;
+            width: 270px;
+            height: 400px;
+            background: url("image/bg.jpg");
+        }
+        .login>img{
+            position: absolute;
+            width: 150px;
+            height: 50px;
+            top: 260px;
+            left: 60px;
+
+        }
+        .login>.this{
+            position: absolute;
+            left: 90px;
+            top: 170px;
+        }
+        .login>.stop{
+            position: absolute;
+            top: 80px;
+            left: 90px;
+        }
+        .game_bg>.small:hover{
+            transform: translateY(10px);
+            cursor: pointer;
+        }
+        .game_fixed>.bk:hover{
+            transform: translateY(10px);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="bg">
+    <img src="image/bg.jpg" alt="">
+    <div class="game_bg">
+        <img src="image/indpic.png" alt="" class="big">
+        <h3>双十一大夺宝</h3>
+        <img src="image/startbtn.png" alt="" class="small">
+    </div>
+</div>
+<div class="game_fixed">
+    <img src="image/gamebg.png" alt="" class="bigS">
+    <h3>双十一大夺宝</h3>
+    <img src="image/backbtn.png" alt="" class="bk">
+    <div class="left">获取金币数量:<span class="ll"></span></div>
+    <div class="right">倒计时:<span class="timeC"></span>s</div>
+</div>
+<div class="coin">
+    <img src="image/coin.png" alt="" class="coin1">
+    <img src="image/coin.png" alt="" class="coin2">
+    <img src="image/coin.png" alt="" class="coin3">
+    <img src="image/coin.png" alt="" class="coin4">
+    <img src="image/coin.png" alt="" class="coin5">
+    <img src="image/coin.png" alt="" class="coin6">
+    <img src="image/coin.png" alt="" class="coin6">
+    <img src="image/coin.png" alt="" class="coin7">
+    <img src="image/coin.png" alt="" class="coin8">
+    <img src="image/coin.png" alt="" class="coin9">
+    <img src="image/coin.png" alt="" class="coin10">
+    <img src="image/coin.png" alt="" class="coin11">
+    <img src="image/coin.png" alt="" class="coin12">
+    <img src="image/coin.png" alt="" class="coin13">
+    <img src="image/coin.png" alt="" class="coin14">
+    <img src="image/coin.png" alt="" class="coin15">
+    <img src="image/man.png" alt="" class="red">
+</div>
+
+<script src="jquery-1.11.3/jquery.js"></script>
+<script>
+    $(function () {
+            $(".small").click(function () {
+                $(".game_fixed").fadeIn(1000);
+                $(".game_bg").hide();
+                $(".coin").fadeIn(1000)
+                var $t=11;
+                var $t2=0;
+                var math=$(".ll");
+                var timer1=setInterval(function () {
+                    $t2++;
+                    math.html($t2);
+                  if ($t2>=15){
+                      clearInterval(timer1);
+                  }
+                },800)
+                var time=$(".timeC");
+                var timer=setInterval(function () {
+                    $t--;
+                    var tM=time.html($t);
+                    if ($t<=0){
+                        clearInterval(timer)
+                        var $mask=$("<div class=\"mask\">\n" +
+                            "    <div class=\"login\">\n" +
+                            "        <h3 class=\"stop\">游戏结束!</h3>\n" +
+                            "        <h3 class=\"this\">当前得分：<span>15分</span></h3>\n" +
+                            "        <img src=\"image/backbtn.png\" alt=\"\"></div>\n" +
+                            "</div>")
+                        $("body").append($mask);
+                        $('body').delegate('.login>img','click',function () {
+                            window.location.reload();
+                        })
+                    }
+                },1000)
+            })
+            $(".bk").click(function () {
+                //刷新页面
+                window.location.reload();
+            })
+        var x=0;
+        var y=0;
+        $(window).keydown(function (e) {
+            switch (e.keyCode) {
+                case 38://上
+                    if (x>0){
+                        x--;
+                       $(".red").css("top",(x*10)+"px")
+                    }
+                    break;
+                case 40://下
+                    if (x<17){
+                        x++
+                        $(".red").css("top",(x*10)+"px")
+
+                    }
+                    break;
+                case 37://左
+                    if (y>0){
+                        y--;
+                        $(".red").css("left",(y*10)+"px")
+                    }
+                    break;
+                case 39://右
+                    if (y<26) {
+                        y++;
+                        $(".red").css("left",(y*10)+"px")
+                    }
+                    break;
+            }
+        })
+        $(document).keyup(function () {
+            var $rLeft=$(".red").offset().left;
+            var $rTop=$(".red").offset().top;
+            var $cTop=$(".coin>.coin1").offset().top;
+            var $cTop2=$(".coin>.coin2").offset().top;
+            var $cTop3=$(".coin>.coin3").offset().top;
+            var $cTop4=$(".coin>.coin4").offset().top;
+            var $cTop5=$(".coin>.coin5").offset().top;
+            // var $cTop6=$(".coin>.coin6").offset().top;
+            var $cLeft6=$(".coin>.coin6").offset().left;
+            var $cTop7=$(".coin>.coin7").offset().top;
+            var $cTop8=$(".coin>.coin8").offset().top;
+            var $cTop9=$(".coin>.coin9").offset().top;
+            var $cTop10=$(".coin>.coin10").offset().top;
+            var $cTop11=$(".coin>.coin11").offset().top;
+            var $cTop12=$(".coin>.coin12").offset().top;
+            // var $cTop13=$(".coin>.coin13").offset().top;
+            var $cLeft13=$(".coin>.coin13").offset().left;
+            var $cTop14=$(".coin>.coin14").offset().top;
+            // var $cTop15=$(".coin>.coin15").offset().top;
+            var $cLeft15=$(".coin>.coin15").offset().left;
+            if($rTop==$cTop){
+                $(".coin>.coin1").hide();
+            }else if ($rTop==$cTop3){
+                $(".coin>.coin3").hide();
+            }else if ($rTop==$cTop5){
+                $(".coin>.coin5").hide();
+            }else if ($rTop==$cTop2){
+                $(".coin>.coin2").hide();
+            }else if ($rTop==$cTop4){
+                $(".coin>.coin4").hide();
+            }else if ($rLeft==$cLeft6){
+                $(".coin>.coin6").hide();
+            }else if ($rTop==$cTop7){
+                $(".coin>.coin7").hide();
+            }else if ($rTop==$cTop8){
+                $(".coin>.coin8").hide();
+            }else if ($rTop==$cTop9){
+                $(".coin>.coin9").hide();
+            }else if ($rTop==$cTop10){
+                $(".coin>.coin10").hide();
+            }else if ($rTop==$cTop11){
+                $(".coin>.coin11").hide();
+            }else if ($rLeft==$cLeft13){
+                $(".coin>.coin13").hide();
+            }else if ($rTop==$cTop12){
+                $(".coin>.coin12").hide();
+            }else if ($rTop==$cTop14){
+                $(".coin>.coin14").hide();
+            }else if ($rLeft==$cLeft15){
+                $(".coin>.coin15").hide();
+            }
+
+        })
+    })
+</script>
+</body>
+</html>

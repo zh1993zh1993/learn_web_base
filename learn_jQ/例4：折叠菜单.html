@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .nav{
+            list-style: none;
+            width: 300px;
+            margin: 100px auto;
+        }
+        .nav>li{
+            border: 1px solid #000;
+            line-height: 35px;
+            /*去掉底部边框*/
+            border-bottom:none;
+            /*首行缩进2个字节*/
+            text-indent: 2em;
+            position: relative;
+        }
+        .nav>li:first-child{
+            /*头部左侧半圆角*/
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+        .nav>li:last-child{
+            border-bottom: 1px solid #000;
+            /*底部右侧边框的半圆角*/
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+        .nav>li>span{
+            background: url("video/jiantou.png") no-repeat center center;
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background-color: #0a0a0a;
+            position: absolute;
+            right: 10px;
+            top: 1px;
+        }
+        .sub>li{
+            list-style: none;
+            border-bottom: 1px solid white;
+            background: mediumpurple;
+
+        }
+        .sub{
+            display: none;
+        }
+        .sub>li:hover{
+            background: red;
+        }
+        .nav>li>.rotate{
+            transform: rotate(-90deg);
+        }
+        .nav>.current>.rotate{
+            transform: rotate(-360deg);
+        }
+    </style>
+</head>
+<body>
+<ul class="nav">
+    <li>一级菜单<span class="rotate"></span>
+        <ul class="sub">
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+        </ul>
+    </li>
+    <li>一级菜单<span class="rotate"></span>
+        <ul class="sub">
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+        </ul></li>
+    <li>一级菜单<span class="rotate"></span>
+        <ul class="sub">
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+        </ul>
+    </li>
+    <li>一级菜单<span class="rotate"></span>
+        <ul class="sub">
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+        </ul>
+    </li>
+    <li>一级菜单<span class="rotate"></span>
+        <ul class="sub">
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+        </ul>
+    </li>
+    <li>一级菜单<span class="rotate"></span>
+        <ul class="sub">
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+        </ul>
+    </li>
+    <li>一级菜单<span class="rotate"></span>
+        <ul class="sub">
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+        </ul>
+    </li>
+    <li>一级菜单<span class="rotate"></span>
+        <ul class="sub">
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+        </ul>
+    </li>
+</ul>
+<script src="../jquery-1.11.3/jquery.js"></script>
+<script>
+    $(function () {
+        $(".nav>li").click(function () {
+            $(this).children(".sub").stop().slideToggle(1000)
+            //让所有非当前的二级菜单收起
+            $(this).siblings().children(".sub").stop().slideUp(1000)
+        //    让被点击的一级菜单箭头旋转
+                $(this).addClass("current").siblings().removeClass("current")
+        //  让所有没有被点击的箭头不旋转
+
+        })
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .king{
+            width: 800px;
+            height: 220px;
+            overflow: hidden;
+            padding: 10px;
+        }
+       .king ul{
+            overflow: hidden;
+        }
+        .king li{
+            position: relative;
+            float: left;
+            width: 69px;
+            height: 69px;
+            border-radius: 5px;
+            list-style: none;
+        }
+        .king li.current{
+            width: 224px;
+        }
+        .king li.current .big{
+            display: block;
+        }
+        .king li.current .small{
+          display: none;
+        }
+        .big{
+            width: 224px;
+            display: none;
+        }
+        .small{
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 69px;
+            height: 69px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="king">
+    <ul>
+        <li class="current">
+            <a href="#">
+                <img src="../../images2/tu1.jpg" alt="" class="small">
+                <img src="../../images2/tu.jpg" alt="" class="big">
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <img src="../../images2/tu1.jpg" alt="" class="small">
+                <img src="../../images2/tu.jpg" alt="" class="big">
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <img src="../../images2/tu1.jpg" alt="" class="small">
+                <img src="../../images2/tu.jpg" alt="" class="big">
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <img src="../../images2/tu1.jpg" alt="" class="small">
+                <img src="../../images2/tu.jpg" alt="" class="big">
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <img src="../../images2/tu1.jpg" alt="" class="small">
+                <img src="../../images2/tu.jpg" alt="" class="big">
+            </a>
+        </li>
+    </ul>
+</div>
+<script src="../../jquery-1.11.3/jquery.js"></script>
+<script>
+    $(function () {
+    //鼠标经过某个小li，有两部操作
+        $(".king li").mouseenter(function () {
+        //    当前的小li会变成224px，同时里面的小图片淡出，大图片淡入
+            $(this).stop().animate({
+                width:224
+            }).find(".small").stop().fadeOut().siblings(".big").stop().fadeIn();
+        //    其余兄弟小li宽度变为69px，小图片淡入，大图片淡出
+            $(this).siblings("li").stop().animate({
+                width:69
+            }).find(".small").stop().fadeIn().siblings(".bid").stop().fadeOut()
+        })
+    })
+</script>
+</body>
+</html>

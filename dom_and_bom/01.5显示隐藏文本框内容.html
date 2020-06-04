@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input{
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+<input type="text" value="手机">
+<script>
+    var text=document.querySelector('input')
+//    获取焦点事件
+    text.onfocus=function () {
+        //判断value是否为手机
+        if (this.value==='手机'){
+            //那么光标聚集的时候值为空
+            this.value=null
+        }
+        //输入的文字是黑色的，而不是和之前一样的浅色
+        this.style.color='#333'
+
+    }
+    text.onblur=function () {
+        //判断value的值是否为空
+        if (this.value===''){
+            this.value='手机'
+        //    那么失去焦点的时候值为手机
+        //    就不会影响文字输入时的光标聚集或者失去焦点
+        }
+        //失去焦点后，颜色也会变浅
+        this.style.color='#999'
+
+    }
+</script>
+</body>
+</html>

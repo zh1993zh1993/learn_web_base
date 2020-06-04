@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img{
+            width: 300px;
+            transform: translateY(50%);
+        }
+    </style>
+</head>
+<body>
+<button id="pic1">图片1</button>
+<button id="pic2">图片2</button>
+<img src="../images5/1.jpg" title="肖战1">
+<script>
+    //修改元素属性src
+    var oRtn1=document.getElementById('pic1');
+    var oRtn2=document.getElementById('pic2');
+    var img1=document.querySelector('img');
+
+
+
+    oRtn2.onclick=function () {
+        img1.src ='../images5/2.jpg'
+        img1.title='肖战二'//鼠标悬浮上去图片显示的字，title
+
+    }
+    oRtn1.onclick=function () {
+        img1.src='../images5/1.jpg';
+        img1.title='肖战1'
+    }
+</script>
+</body>
+</html>

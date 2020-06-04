@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button>浅复制节点</button>
+<button>深复制节点</button>
+<ul>
+    <li>我是第1个li</li>
+    <li>我是第2个li</li>
+    <li>我是第3个li</li>
+    <li>我是第4个li</li>
+    <li>我是第5个li</li>
+</ul>
+<script src="../jquery-1.11.3/jquery.js"></script>
+<script>
+    $(function () {
+        $("button").eq(0).click(function () {
+        //    浅复制一个元素
+            var $li=$("li:first").clone(false)
+            //将复制的元素添加到ul中
+            $("ul").prepend($li)
+
+        })
+        $("button").eq(1).click(function () {
+//    深复制一个元素
+            var $li=$("li:first").clone(true)
+            //将复制的元素添加到ul中
+            $("ul").prepend($li)
+        })
+        $("li").click(function () {
+            //浅复制false不弹出，因为浅复制只复制其元素，不复制其元素事件
+            //深复制true复制元素和其事件，要弹出
+            alert(11)
+        })
+    })
+</script>
+</body>
+</html>

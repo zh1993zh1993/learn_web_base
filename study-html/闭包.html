@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function test() {
+        var arr=[];
+        for (var i=0;i<10;i++){
+            arr[i]=function () {
+                document.write(i+"");
+            };
+            return arr;
+        }
+        var myArr=test();
+        for (var j=0;j<10;j++){
+            myArr[j]();
+        }
+    }
+</script>
+</body>
+</html>

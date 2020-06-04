@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>点我有弹框</li>
+    <li>点我有弹框</li>
+    <li>点我有弹框</li>
+    <li>点我有弹框</li>
+    <li>点我有弹框</li>
+    <li>点我有弹框</li>
+</ul>
+<script>
+    var ul=document.querySelector('ul')
+
+    ul.addEventListener('click',function (e) {
+        // alert('点我有弹框')
+
+        for (var i = 0; i < ul.children.length;i++){
+            ul.children[i].style.backgroundColor=null
+        }
+        //    e.target:可以得到点击的对象
+        e.target.style.backgroundColor='red'
+    })
+</script>
+</body>
+</html>

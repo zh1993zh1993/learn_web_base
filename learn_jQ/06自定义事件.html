@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .father{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+<script src="../jquery-1.11.3/jquery.js"></script>
+<script>
+    $(function () {
+        //自定义事件，必须通过on绑定。必须通过trigger来触发
+        $('.son').on('myClick',function () {
+            alert('hhh')
+        })
+        $('.son').trigger('myClick')
+
+    })
+</script>
+<div class="father">
+    <div class="son"></div>
+</div>
+<a href="http://www.baidu.com">注册</a>
+<form action="http://www.taobao.com">
+    <input type="text">
+    <input type="submit">
+</form>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .tab{
+
+            width: 620px;
+            height: 400px;
+            margin: 100px auto;
+
+        }
+        .tab_list{
+
+            width: 330px;
+            height: 40px;
+            background-color: white;
+        }
+        .tab_list li{
+            list-style: none;
+            float: left;
+            width:120px;
+            line-height: 39px;
+            height: 39px;
+            padding: 0 20px;
+            text-align: center;
+            cursor: pointer;
+            color: grey;
+        }
+        .tab_list li:hover{
+            color: red;
+        }
+        .tab_list .current{
+            background-color: white;
+        }
+        .tab_list ul li{
+            border: 1px solid gainsboro;
+        }
+        .tab_con .items{
+            float: left;
+            width: 320px;
+            height: 260px;
+            padding-top:20px;
+            display: none;
+
+        }
+        .tab_con .items img{
+            width:230px;
+            padding-left: 40px;
+        }
+        .tab_con .itemss{
+            width: 328px;
+            border: 1px solid black;
+            height: 320px;
+            display: none;
+            background-color: white;
+        }
+        .tab_con .itemss .one {
+            width: 280px;
+            height:43px;
+            border: 1px solid gainsboro;
+            margin-top: 30px;
+            margin-left: 20px;
+        }
+        .tab_con .itemss .one input{
+            border:1px solid  white ;
+            float: right;
+            width: 230px;
+            height: 38px;
+            outline: none;
+        }
+        .tab_con .itemss .two {
+            width: 280px;
+            height:43px;
+            border: 1px solid gainsboro;
+            margin-top: 30px;
+            margin-left: 20px;
+        }
+        .tab_con .itemss .two input{
+            border:1px solid  white ;
+            float: right;
+            width: 230px;
+            height: 38px;
+            outline: none;
+        }
+        .tab_con .itemss .ch{
+            margin-top: 30px;
+            margin-left: 20px;
+        }
+        .tab_con .itemss .wj{
+            float: right;
+            margin-top:26px ;
+            color: grey;
+        }
+        div#zc {
+            width: 280px;
+            margin-top: 10px;
+            height: 40px;
+            margin-left: 20px;
+            border: 1px solid red;
+            text-align: center ;
+            background-color: red;
+        }
+        div#zc p{
+            margin-top: 10px;
+            color: white;
+        }
+        .tab_con .itemss  p#lz{
+            width: 258px;
+            text-align: center;
+            border-top: 1px solid grey;
+            margin-top: 20px;
+            margin-left: 38px;
+            padding-top: 10px;
+        }
+        .tab_con .itemss  p a{
+            text-decoration: none;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div class="tab">
+    <div class="tab_list">
+        <ul>
+            <li class="current">扫码登陆</li>
+            <li class="zhd">账户登陆</li>
+        </ul>
+    </div>
+    <div class="tab_con">
+        <div class="items" ><img src="login/dog2.jpg" alt=""></div>
+        <div class="itemss">
+            <div class="one">
+                <input type="text" id="white" placeholder="邮箱/用户名/以验证手机">
+                <label for=""> <img src="login/toubai.png" alt="" id="tH"></label>
+            </div>
+            <div class="two">
+                <input type="password" id="black" placeholder="密码">
+                <label for=""> <img src="login/suobai.png" alt="" id="sH"></label>
+            </div>
+            <input type="checkbox" class="ch">自动登陆
+            <p class="wj">忘记密码</p>
+            <div id="zc">
+                <p class="message7">登录</p>
+            </div>
+            <p id="lz"><a href="#">立即注册</a></p>
+        </div>
+    </div>
+</div>
+<script>
+    var oCrr=document.querySelector('.current');
+    var oIt=document.querySelector('.items');
+    var oZhd=document.getElementsByClassName('zhd')[0];
+    var iss=document.getElementsByClassName('itemss')[0];
+    var wT=document.getElementById('white');
+    var wB=document.getElementById('black');
+    var tH=document.getElementById('tH');
+    var sH=document.getElementById('sH')
+    wT.onfocus=function () {
+        this.placeholder=''
+        tH.src='login/touhei.png'
+    };
+    wT.onblur=function () {
+        this.placeholder='邮箱/用户名/以验证手机'
+        tH.src='login/toubai.png'
+    };
+    wB.onfocus=function () {
+        this.placeholder=''
+        sH.src='login/suohei.png'
+    };
+    wB.onblur=function () {
+        this.placeholder='密码'
+        sH.src='login/suobai.png'
+    };
+
+    oZhd.onclick=function(){
+        iss.style.display='block'
+        oIt.style.display='none'
+    }
+    oCrr.onclick=function () {
+        oIt.style.display='block'
+        iss.style.display='none'
+    }
+</script>
+</body>
+</html>

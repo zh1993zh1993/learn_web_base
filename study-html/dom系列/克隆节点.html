@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>克隆节点cloneNode</title>
+</head>
+<body>
+<span>span</span>
+<div id="div1">div</div>
+<p>p</p>
+<script>
+    var oDiv=document.getElementById('div1');
+    var oSpan=document.getElementsByTagName('span')[0];
+    var node=oDiv.cloneNode(true);//克隆一个oDiv
+    oSpan.parentNode.insertBefore(node,oSpan);//oDiv插入到oSpan之前
+
+</script>
+</body>
+</html>

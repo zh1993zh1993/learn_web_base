@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+            /*这句话的意思是：在我们屏幕上 并且 最大的宽度是800像素 设置我们想要的样式*/
+            /*max-width: 800px  小于等于800*/
+        /*    从小到大的顺序写会让代码更简洁*/
+        /* 媒体查询可以针对不同屏幕尺寸设置不同样式*/
+        /*    1.小于540px 页面的背景颜色为蓝色*/
+        @media screen and (max-width: 539px){
+            body{
+                background-color: blue;
+            }
+        }
+        /*    540~970 页面元素改为绿色*/
+        /*@media screen and (min-width: 540px) and (max-width: 969px){*/
+        /*    body{*/
+        /*        background-color:green;*/
+        /*    }*/
+        /*}*/
+            @media screen and (min-width: 540px){
+                body{
+                    background-color:green;
+                }
+            }
+        /*    大于等于970 页面颜色改为红色*/
+        @media screen and (min-width: 970px) {
+            body{
+                background-color:red;
+            }
+        }
+    </style>
+</head>
+<body>
+<!--
+媒体查询（Media Query）是css3新语法：针对不同屏幕尺寸设置不同样式
+   @media mediatype and|not|only(media feature) {
+            css-Code
+        }
+ .用 @media开头 注意@符号
+ ——————————————————————————————————————————————————————————
+ .mediatype：媒体类型
+ 值：
+ 1.all  用于所有设备
+ 2.print 用于打印机和打印预览
+ 3.scree 用于电脑屏幕，平板电脑，智能手机等
+ ——————————————————————————————————————————————————————————————————————————
+ .and|not|only 关键字  将媒体类型或多个媒体特性连接到一起做为媒体查询的条件
+ and：可以将媒体类型或多个媒体特性连接到一起，用的较多
+ ——————————————————————————————————————————————————————————
+ .media feature 媒体特征 必须有小括号包含
+ 值：
+ 1.width  定义输出设备中页面可见区域的宽度
+ 2.min-width  定义输出设备中页面最小可见区域宽度
+ 3.max-width  定义输出设备中页面最大可见区域宽度
+-->
+</body>
+</html>

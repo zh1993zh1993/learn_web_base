@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .nav{
+            margin-top: 100px;
+            margin-left: 500px;
+            height: 600px;
+        }
+        .nav li{
+            float: left;
+            list-style: none;
+            width: 100px;
+            height: 50px;
+            text-align: center;
+
+        }
+
+        .nav li ul{
+            display: none;
+            width: 120px;
+            height: 100px;
+            margin-top:30px;
+            left: 0;
+
+
+
+        }
+        .nav li ul li{
+            border-left: 1px solid #FECC5B;
+            border-right: 1px solid #FECC5B;
+            border-bottom:  1px solid #FECC5B;
+            width: 100px;
+            padding-top: 20px;
+        }
+        .nav li ul li:hover{
+            background-color: deepskyblue;
+        }
+        a{
+            text-decoration: none;
+            color: #333;
+        }
+
+    </style>
+</head>
+<body>
+<ul class="nav">
+    <li>
+        <a href="#">微博</a>
+        <ul>
+            <li><a href="#">私信</a></li>
+            <li><a href="#">评论</a></li>
+            <li><a href="#">@我</a></li></ul>
+    <li>
+        <a href="#">微博</a>
+        <ul>
+            <li><a href="#">私信</a></li>
+            <li><a href="#">评论</a></li>
+            <li><a href="#">@我</a></li></ul>
+    </li>
+    <li>
+        <a href="#">微博</a>
+        <ul>
+            <li><a href="#">私信</a></li>
+            <li><a href="#">评论</a></li>
+            <li><a href="#">@我</a></li></ul>
+    </li>
+    <li>
+        <a href="#">微博</a>
+        <ul>
+            <li  ><a href="#">私信</a></li>
+            <li  ><a href="#">评论</a></li>
+            <li  ><a href="#">@我</a></li></ul>
+    </li>
+</ul>
+<script src="../../jquery-1.11.3/jquery.js"></script>
+<script>
+    $(function () {
+    $('.nav>li').mouseover(function () {
+        // $(this) jquery里的当前元素，this不用加引号
+        //show():让当前元素显示出来
+        $(this).children('ul').show()
+    })
+        $('.nav>li').mouseout(function () {
+            //hide()：让当前元素隐藏
+            $(this).children('ul').hide()
+        })
+    })
+</script>
+</body>
+</html>

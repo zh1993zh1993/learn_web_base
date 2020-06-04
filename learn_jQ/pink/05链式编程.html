@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+你是哪个小饼干
+<button>按钮1</button>
+<button>按钮2</button>
+<button>按钮3</button>
+<button>按钮4</button>
+<button>按钮5</button>
+<button>按钮3</button>
+<button>按钮4</button>
+<button>按钮5</button>
+<script src="../../jquery-1.11.3/jquery.js"></script>
+<script>
+    $(function () {
+        // //隐式迭代。给所有的按钮都绑定了点击事件
+        $("button").click(function () {
+        //     //当前元素变化颜色背景,this不加引号
+        //     $(this).css('backgroundColor','red')
+        //     //    其余兄弟去掉背景颜色,this不加引号
+        //     $(this).siblings("button").css('backgroundColor','')
+        //    链式编程操作方法，我的颜色为红色，我的兄弟不变色
+            $(this).css('color','red').siblings().css('color','')
+        // //我的兄弟为红色，我的颜色不变色
+            $(this).siblings().css('color','red')
+        //    我兄弟的父亲，也就是body
+            $(this).siblings().parent().css('color','blue')
+        })
+    })
+</script>
+</body>
+</html>

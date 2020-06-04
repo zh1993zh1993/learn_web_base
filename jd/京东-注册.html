@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    header{
+        position: relative;
+        width:100% ;
+        height: 80px;
+        border-bottom:2px solid gainsboro;
+
+    }
+    header img{
+        position: absolute;
+        left: 180px;
+        top: 20px;
+
+    }
+        header p.one{
+            position: absolute;
+            font-size: 20px;
+            font-family: Dialog;
+            left: 368px;
+            top: 35px;
+        }
+        header p.two{
+            position: absolute;
+            font-size: 16px;
+            font-family: Dialog;
+            color: grey;
+            right: 230px;
+            top: 35px;
+        }
+        header a{
+            position: absolute;
+            font-size: 16px;
+            font-family: Dialog;
+            color: red;
+            right: 165px;
+            top: 35px;
+            text-decoration: none;
+        }
+        div#yhm{
+            position: absolute;
+            left: 600px;
+            width: 350px;
+            height: 80px;
+
+        }
+        div#yhm input{
+            margin-top:5px ;
+            width: 410px;
+            height: 40px;
+            outline: none;
+            border:1.5px solid  #d4d4d4;
+            color: grey;
+        }
+        div#yhm p{
+            margin-top: 3px;
+            color: grey;
+        }
+        div#mm{
+            position: absolute;
+            left: 600px;
+            top: 180px;
+            width: 350px;
+            height: 80px;
+
+        }
+        div#mm input{
+            margin-top:5px ;
+            width: 410px;
+            height: 40px;
+            outline: none;
+            border:1.5px solid  #d4d4d4;
+            color: grey;
+        }
+        div#mm p{
+            margin-top: 3px;
+            color: grey;
+        }
+        div#qr{
+            position: absolute;
+            left: 600px;
+            top: 270px;
+            width: 350px;
+            height: 80px;
+        }
+        div#qr input{
+            margin-top:5px ;
+            width: 410px;
+            height: 40px;
+            outline: none;
+            border:1.5px solid  #d4d4d4;
+            color: grey;
+        }
+        div#qr p{
+            margin-top: 3px;
+            color: grey;
+        }
+        div#phone {
+            position: absolute;
+            left: 600px;
+            top: 360px;
+            width: 350px;
+            height: 80px;
+        }
+        div#phone input{
+            margin-top:5px ;
+            width: 410px;
+            height: 40px;
+            outline: none;
+            border:1.5px solid  #d4d4d4;
+            color: grey;
+        }
+        div#phone p{
+            margin-top: 3px;
+            color: grey;
+        }
+        div#yx {
+            position: absolute;
+            left: 600px;
+            top: 450px;
+            width: 350px;
+            height: 80px;
+        }
+        div#yx input{
+            margin-top:5px ;
+            width: 410px;
+            height: 40px;
+            outline: none;
+            border:1.5px solid  #d4d4d4;
+            color: grey;
+        }
+        div#yx p{
+            margin-top: 3px;
+            color: grey;
+        }
+        div#yzm {
+            position: absolute;
+            left: 600px;
+            top: 540px;
+            width: 350px;
+            height: 80px;
+        }
+        div#yzm input{
+            margin-top:5px ;
+            width: 410px;
+            height: 40px;
+            outline: none;
+            border:1.5px solid  #d4d4d4;
+            color: grey;
+        }
+        div#yzm p{
+            margin-top: 3px;
+            color: grey;
+        }
+        button{
+            position: absolute;
+            left:1050px;
+            top:545px;
+            width: 100px;
+            height: 40px;
+            border: #d4d4d4;
+        }
+        div#zc {
+            position: absolute;
+            left: 600px;
+            top: 650px;
+            width: 410px;
+            height: 40px;
+            border: 1px solid red;
+            text-align: center ;
+            background-color: red;
+        }
+        div#zc p{
+            margin-top: 10px;
+            color: white;
+        }
+        p.message7:hover{
+            cursor: pointer;
+        }
+        table{
+            position: absolute;
+            top: 730px;
+          left: 430px;
+        }
+        tr td{
+
+            border-right: 1px solid black;
+            font-size: 13px;
+            padding:5px;
+        }
+        td a{
+            text-decoration: none;
+            color: grey;
+        }
+        td a:hover{
+            color: red;
+        }
+        #pp{
+            position: absolute;
+            top: 780px;
+            left: 630px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <img src="login/jsdog.jpg" alt="">
+    <p class="one">欢迎注册</p>
+    <p class="two">已有账号?</p>
+    <a href="京东-登录.html">请登录</a>
+</header>
+<div id="yhm">
+    <input type="text" class="yh" value="用户名"required="required">
+    <p class="message"></p>
+</div>
+<div id="mm">
+    <input type="password" class="mm" value="" required="required" placeholder="密码">
+    <p class="message2"></p>
+</div>
+<div id="qr">
+    <input type="password" class="qr" value="" required="required" placeholder="确认密码">
+    <p class="message3"></p>
+</div>
+<div id="phone">
+    <input type="tel" class="tel" value="" required="required" placeholder="手机号">
+    <p class="message4"></p>
+</div>
+<div id="yx">
+    <input type="email" class="em" value="" required="required" placeholder="邮箱">
+    <p class="message5"></p>
+</div>
+<div id="yzm">
+    <input type="text" class="yz" value="" required="required" placeholder="验证码">
+    <p class="message6"></p>
+</div>
+<button>点击获取</button>
+<div id="zc">
+    <p class="message7">点击注册</p>
+</div>
+
+<table>
+    <tr>
+        <td><a href="#">关于我们</a></td>
+        <td><a href="#">联系我们</a></td>
+        <td><a href="#">人才招聘</a></td>
+        <td><a href="#">商家入驻</a></td>
+        <td><a href="#">广告服务</a></td>
+        <td><a href="#">手机京东</a></td>
+        <td><a href="#">友情链接</a></td>
+        <td><a href="#">联盟销售</a></td>
+        <td><a href="#">京东社区</a></td>
+        <td><a href="#">京东公益</a></td>
+        <td><a href="#">Elindbd</a></td>
+    </tr>
+</table>
+<p id="pp">
+    Copyright©2004-2017京东JD.Com版权所有
+</p>
+
+<script>
+    var ipt1=document.getElementsByClassName('yh')[0];
+    var message=document.getElementsByClassName('message')[0];
+    var ipt2=document.getElementsByClassName('mm')[0];
+    var message2=document.getElementsByClassName('message2')[0];
+    var ipt3=document.getElementsByClassName('qr')[0];
+    var message3=document.getElementsByClassName('message3')[0];
+    var ipt4=document.getElementsByClassName('tel')[0];
+    var message4=document.getElementsByClassName('message4')[0];
+    var ipt5=document.getElementsByClassName('em')[0];
+    var message5=document.getElementsByClassName('message5')[0];
+    var re=/^\w+@[a-z0-9]+\.[a-z]{2,4}$/;
+    var ipt6=document.getElementsByClassName('yz')[0];
+    var message6=document.getElementsByClassName('message6')[0];
+    ipt6.onfocus=function(){
+        this.placeholder='';
+        this.value=''
+        this.style.color='black'
+        message6.innerHTML='请输入您的验证码';
+        message6.style.color='grey'
+    };
+    ipt6.onblur=function(){
+        if (this.value==''){
+            message6.style.color='red';
+            message6.innerHTML='验证码不能为空'
+        }
+    }
+
+    ipt5.onfocus=function(){
+        this.placeholder='';
+         this.style.color='black'
+        message5.innerHTML='请输入您的邮箱';
+        message5.style.color='grey'
+    };
+    ipt5.onblur=function(){
+
+        if (this.value===''){
+            message5.style.color='red';
+            message5.innerHTML='邮箱不能为空'
+        }else if (re.test(this.value)){
+            message5.innerHTML='邮箱正确'
+        }else{
+            message5.innerHTML='请输入正确格式'
+            message5.style.color='red';
+        }
+    }
+    ipt4.onfocus=function(){
+        this.placeholder='';
+        this.value='';
+        message4.innerHTML='请输入您的手机号';
+        message4.style.color='grey'
+        this.style.color='black'
+    };
+    ipt4.onblur=function(){
+        if (this.value===''){
+            message4.style.color='red'
+            message4.innerHTML='手机号不能为空'
+        }else if (this.value<12||this.value>=12) {
+            message4.style.color='red'
+            message4.innerHTML='请输入11位的手机号'
+        }
+    }
+    ipt3.onfocus=function(){
+        this.placeholder='';
+        this.value='';
+        message3.innerHTML='请确认您的密码';
+        message3.style.color='grey'
+        this.style.color='black'
+    };
+    ipt3.onblur=function(){
+        if (this.value==''){
+            message3.innerHTML='请确认密码，不能为空'
+            message3.style.color='red'
+        }else if(this.value===ipt2.value) {
+            message3.innerHTML='密码输入正确';
+            message3.style.color='black'
+        }else {
+            message3.innerHTML='密码错误，请确认密码';
+            message3.style.color='red'
+        }
+    }
+    ipt2.onfocus=function(){
+        this.placeholder='';
+        message2.innerHTML='请输入6~12位密码'
+        message2.style.color='grey'
+        this.style.color='black'
+
+    }
+    ipt2.onblur=function(){
+        if (this.value===''){
+            this.style.color='black';
+            message2.innerHTML='密码不能为空，请输入';
+            message2.style.color='red'
+        }else if (this.value.length<6||this.value.length>12) {
+            message2.innerHTML='密码格式不正确，请输入6~12位密码'
+            message2.style.color='red'
+        }else {
+            message2.innerHTML='输入正确'
+        }
+
+    }
+    ipt1.onfocus=function () {
+        this.value=null
+        this.style.color='black'
+        message.innerHTML='请输入用户名'
+        message.style.color=' grey'
+    }
+    ipt1.onblur=function () {
+        if (this.value===''){
+            this.value='用户名';
+            this.style.color='grey';
+            message.innerHTML='用户名不能为空，请输入';
+            message.style.color='red'
+        }else {
+            message.innerHTML='输入正确'
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM 选项卡</title>
+    <style>
+
+        .content {
+            display: none;//将元素隐藏
+            width: 100px;
+            height: 200px;
+            border: 2px solid red;
+        }
+      .active{
+          background-color: yellow;
+
+        }
+
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <button   class="active">111</button>
+    <button >222</button>
+    <button >333</button>
+    <div class="content" style="display: block">肖战帅111</div>
+    <div  class="content">老公帅222</div>
+    <div class="content">我很帅333</div>
+</div>
+
+<script>
+ //    //dom对象
+ //    //通过标签名的方式将div这个标签选出来，后面加个类数组第几位取出来
+ //    var div=document.getElementsByTagName('div')[0];
+ //    div.style.width="100px";
+ //    div.style.height="100px";
+ //    div.style.backgroundColor="red";
+ // //点击之后，执行function里面的内容
+ //    //用count计数，点击几次取模几次。
+ //    var count=0;
+ //    div.onclick=function () {
+ //        count++;
+ //        if (count%3==1) {
+ //            this.style.backgroundColor="green";
+ //        }else if (count%2==1) {
+ //            this.style.backgroundColor="pink";
+ //
+ //    } else {
+ //            this.style.backgroundColor="red";
+ //        }
+ //
+ //    }
+    var btn=document.getElementsByTagName('button');
+    var div=document.getElementsByClassName('content');
+    //给每一个btn加事件，点击执行让所有的btn都去掉className,再让当前点击的btn加上className
+ for(var i=0;i<btn.length;i++){
+ (function (n) {
+        btn[n].onclick=function () {
+            for (var j=0;j<btn.length;j++){
+                btn[j].className="";
+                div[j].style.display='none';
+            }
+            this.className="active";
+            div[n].style.display='block';
+
+        }
+ }(i))}
+
+</script>
+
+</body>
+</html>
